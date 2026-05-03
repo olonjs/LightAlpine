@@ -11,8 +11,8 @@ type ImportHit = { href: string; consumed: number };
 
 function matchLeadingRemoteImport(rest: string): ImportHit | null {
   const patterns: RegExp[] = [
-    /^@import\s+url\(\s*(['"])(https?:\/\/[^'"]+)\1\s*\)\s*;/i,
-    /^@import\s+url\(\s*(https?:\/\/[^)\s]+)\s*\)\s*;/i,
+    /^@import\s*url\(\s*(['"])(https?:\/\/[^'"]+)\1\s*\)\s*;/i,
+    /^@import\s*url\(\s*(https?:\/\/[^)\s]+)\s*\)\s*;/i,
     /^@import\s*(['"])(https?:\/\/[^'"]+)\1\s*;/i,
   ];
 

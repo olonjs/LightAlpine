@@ -27,7 +27,12 @@ import { useOlonForms } from '@/lib/useOlonForms';
 import { OlonFormsContext } from '@olonjs/core';
 import { iconMap } from '@/lib/IconResolver';
 
+import tenantRemoteCss from './fonts.css?inline';
 import tenantCss from './index.css?inline';
+import { extractLeadingRemoteCssImports } from '@/lib/extractLeadingRemoteCssImports';
+
+/** Remote @import must be leading text for extractLeadingRemoteCssImports (see fonts.css). */
+const tenantCssBundled = `${tenantRemoteCss}\n${tenantCss}`;
 
 // Cloud Configuration (Injected by Vercel/Netlify Env Vars)
 const CLOUD_API_URL =
@@ -367,47 +372,14 @@ function buildThemeFontVarsCss(input: unknown): string {
   const tokens = isObjectRecord(input.tokens) ? input.tokens : null;
   const typography = tokens && isObjectRecord(tokens.typography) ? tokens.typography : null;
   const fontFamily = typography && isObjectRecord(typography.fontFamily) ? typography.fontFamily : null;
-  const primary = typeof fontFamily?.primary === 'string' ? fontFamily.primary : "'Instrument Sans', system-ui, sans-serif";
-  const serif = typeof fontFamily?.serif === 'string' ? fontFamily.serif : "'Instrument Serif', Georgia, serif";
-  const mono = typeof fontFamily?.mono === 'string' ? fontFamily.mono : "'JetBrains Mono', monospace";
-  return `:root{--theme-font-primary:${primary};--theme-font-serif:${serif};--theme-font-mono:${mono};}`;
+  const primary = typeof fontFamily?.primary === 'string' ? fontFamily.primary : "'Source Serif 4', Georgia, serif";
+  const mono = typeof fontFamily?.mono === 'string' ? fontFamily.mono : "'IBM Plex Mono', monospace";
+  const display = typeof fontFamily?.display === 'string' ? fontFamily.display : "'Cormorant Garamond', Georgia, serif";
+  const serif = typeof fontFamily?.serif === 'string' ? fontFamily.serif : display;
+  return `:root{--theme-font-primary:${primary};--theme-font-serif:${serif};--theme-font-mono:${mono};--theme-font-display:${display};}`;
 }
 
 const REMOTE_CSS_LINK_ATTR = 'data-jp-tenant-remote-css';
-
-function isRemoteStylesheetHref(value: string): boolean {
-  return /^https?:\/\//i.test(value.trim());
-}
-
-function extractLeadingRemoteCssImports(cssText: string): { hrefs: string[]; rest: string } {
-  const hrefs = new Set<string>();
-  const leadingTriviaPattern = /^(?:\s+|\/\*[\s\S]*?\*\/)*/;
-  const importPattern =
-    /^@import\s+url\(\s*(?:'([^']+)'|"([^"]+)"|([^'")\s][^)]*))\s*\)\s*([^;]*);/i;
-  let rest = cssText;
-
-  for (;;) {
-    const trivia = rest.match(leadingTriviaPattern);
-    if (trivia && trivia[0]) {
-      rest = rest.slice(trivia[0].length);
-    }
-
-    const match = rest.match(importPattern);
-    if (!match) break;
-
-    const href = (match[1] ?? match[2] ?? match[3] ?? '').trim();
-    const trailingDirectives = (match[4] ?? '').trim();
-
-    if (!isRemoteStylesheetHref(href) || trailingDirectives.length > 0) {
-      break;
-    }
-
-    hrefs.add(href);
-    rest = rest.slice(match[0].length);
-  }
-
-  return { hrefs: Array.from(hrefs), rest };
-}
 
 function setTenantPreviewReady(ready: boolean): void {
   if (typeof window !== 'undefined') {
@@ -824,10 +796,10 @@ function App() {
     void runCloudSave(pendingCloudSave.current, false);
   }, [runCloudSave]);
 
-  const tenantCssParts = useMemo(() => extractLeadingRemoteCssImports(tenantCss), [tenantCss]);
+  const tenantCssParts = useMemo(() => extractLeadingRemoteCssImports(tenantCssBundled), [tenantCssBundled]);
   const resolvedTenantCss = useMemo(
-    () => [buildThemeFontVarsCss(themeConfig), tenantCssParts.rest].filter(Boolean).join('\n'),
-    [tenantCssParts],
+    () => [tenantCssParts.rest, buildThemeFontVarsCss(themeConfig)].filter(Boolean).join('\n'),
+    [tenantCssParts, themeConfig],
   );
 
   useEffect(() => {

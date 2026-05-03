@@ -6,7 +6,11 @@ import { ThemeProvider } from '@/components/ThemeProvider';
 import { ComponentRegistry } from '@/lib/ComponentRegistry';
 import { SECTION_SCHEMAS } from '@/lib/schemas';
 import { menuConfig, pages, refDocuments, siteConfig, themeConfig } from '@/runtime';
+import tenantRemoteCss from '@/fonts.css?inline';
 import tenantCss from '@/index.css?inline';
+import { extractLeadingRemoteCssImports } from '@/lib/extractLeadingRemoteCssImports';
+
+const tenantCssBundled = `${tenantRemoteCss}\n${tenantCss}`;
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null && !Array.isArray(value);
@@ -67,39 +71,6 @@ function buildThemeCssFromSot(theme: ThemeConfig): string {
   return `:root{${serialized}}`;
 }
 
-function isRemoteStylesheetHref(value: string): boolean {
-  return /^https?:\/\//i.test(value.trim());
-}
-
-function extractLeadingRemoteCssImports(cssText: string): { hrefs: string[]; rest: string } {
-  const hrefs = new Set<string>();
-  const leadingTriviaPattern = /^(?:\s+|\/\*[\s\S]*?\*\/)*/;
-  const importPattern =
-    /^@import(?:\s+url\(\s*(?:'([^']+)'|"([^"]+)"|([^'")\s][^)]*))\s*\)|\s*(['"])([^'"]+)\4)\s*([^;]*);/i;
-  let rest = cssText;
-
-  for (;;) {
-    const trivia = rest.match(leadingTriviaPattern);
-    if (trivia && trivia[0]) {
-      rest = rest.slice(trivia[0].length);
-    }
-
-    const match = rest.match(importPattern);
-    if (!match) break;
-
-    const href = (match[1] ?? match[2] ?? match[3] ?? match[5] ?? '').trim();
-    const trailingDirectives = (match[6] ?? '').trim();
-    if (!isRemoteStylesheetHref(href) || trailingDirectives.length > 0) {
-      break;
-    }
-
-    hrefs.add(href);
-    rest = rest.slice(match[0].length);
-  }
-
-  return { hrefs: Array.from(hrefs), rest };
-}
-
 function resolveTenantId(): string {
   const site: Record<string, unknown> = isRecord(siteConfig) ? siteConfig : {};
   const identityRaw = site['identity'];
@@ -155,13 +126,13 @@ export function render(slug: string): string {
 
 export function getCss(): string {
   const themeCss = buildThemeCssFromSot(themeConfig);
-  const { rest } = extractLeadingRemoteCssImports(tenantCss);
+  const { rest } = extractLeadingRemoteCssImports(tenantCssBundled);
   if (!themeCss) return rest;
-  return `${themeCss}\n${rest}`;
+  return `${rest}\n${themeCss}`;
 }
 
 export function getRemoteStylesheets(): string[] {
-  return extractLeadingRemoteCssImports(tenantCss).hrefs;
+  return extractLeadingRemoteCssImports(tenantCssBundled).hrefs;
 }
 
 export function getPageMeta(slug: string): { title: string; description: string } {

@@ -6,7 +6,10 @@ import { ThemeProvider } from '@/components/ThemeProvider';
 import { ComponentRegistry } from '@/lib/ComponentRegistry';
 import { SECTION_SCHEMAS } from '@/lib/schemas';
 import { menuConfig, pages, refDocuments, siteConfig, themeConfig } from '@/runtime';
+import tenantRemoteCss from '@/fonts.css?inline';
 import tenantCss from '@/index.css?inline';
+
+const tenantCssBundled = `${tenantRemoteCss}\n${tenantCss}`;
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null && !Array.isArray(value);
@@ -155,13 +158,13 @@ export function render(slug: string): string {
 
 export function getCss(): string {
   const themeCss = buildThemeCssFromSot(themeConfig);
-  const { rest } = extractLeadingRemoteCssImports(tenantCss);
+  const { rest } = extractLeadingRemoteCssImports(tenantCssBundled);
   if (!themeCss) return rest;
   return `${themeCss}\n${rest}`;
 }
 
 export function getRemoteStylesheets(): string[] {
-  return extractLeadingRemoteCssImports(tenantCss).hrefs;
+  return extractLeadingRemoteCssImports(tenantCssBundled).hrefs;
 }
 
 export function getPageMeta(slug: string): { title: string; description: string } {

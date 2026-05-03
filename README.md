@@ -71,3 +71,10 @@ export default defineConfig([
   },
 ])
 ```
+
+## Architecture decisions
+
+Recorded in `docs/decisions/` (ADRs):
+
+- [ADR-001: Tenant remote fonts and CSS `@import` order](docs/decisions/ADR-001-tenant-remote-fonts-and-css-import-order.md)
+- [ADR-002: SPA navigation — React Router `Link` vs `<a>`](docs/decisions/ADR-002-spa-navigation-react-router-link.md)

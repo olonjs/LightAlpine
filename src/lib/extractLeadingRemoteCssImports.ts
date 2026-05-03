@@ -1,6 +1,10 @@
 /**
- * Pulls leading remote @import rules off tenant CSS so App can inject them as <link rel="stylesheet">.
- * Lightning/Vite may minify to `@import"https://..."` (no `url(`) — the legacy-only-`url()` regex never matched.
+ * Pulls leading remote @import rules off tenant CSS so the client can inject them as <link rel="stylesheet">.
+ *
+ * Bundlers may minify to forms like `@import"https://..."` (no `url(`). If this fails to match, remote imports
+ * can end up after other rules in the injected sheet and browsers will ignore them (fonts break).
+ *
+ * @see docs/decisions/ADR-001-tenant-remote-fonts-and-css-import-order.md
  */
 
 function isRemoteStylesheetHref(value: string): boolean {

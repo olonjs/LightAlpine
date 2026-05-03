@@ -40,7 +40,7 @@ function hrefIsActive(pathname: string, href: string): boolean {
   return normalizePath(pathname) === normalizePath(href);
 }
 
-/** Same-origin app paths → React Router `Link` (no full document reload). External / special → `<a>`. */
+/** Same-origin app paths → React Router `Link` (no full document reload). External / special → `<a>`. @see docs/decisions/ADR-002-spa-navigation-react-router-link.md */
 function isInAppPathHref(href: string): boolean {
   const t = href.trim();
   if (!t) return false;

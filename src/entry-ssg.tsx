@@ -124,6 +124,7 @@ export function render(slug: string): string {
   );
 }
 
+/** Tenant bundle first so any leading @import stays valid; theme flatten after (ADR-001). */
 export function getCss(): string {
   const themeCss = buildThemeCssFromSot(themeConfig);
   const { rest } = extractLeadingRemoteCssImports(tenantCssBundled);

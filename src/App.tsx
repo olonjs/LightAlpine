@@ -31,7 +31,7 @@ import tenantRemoteCss from './fonts.css?inline';
 import tenantCss from './index.css?inline';
 import { extractLeadingRemoteCssImports } from '@/lib/extractLeadingRemoteCssImports';
 
-/** Remote @import must be leading text for extractLeadingRemoteCssImports (see fonts.css). */
+/** Remote @import first in bundle so extraction / injection order stays valid (ADR-001, fonts.css). */
 const tenantCssBundled = `${tenantRemoteCss}\n${tenantCss}`;
 
 // Cloud Configuration (Injected by Vercel/Netlify Env Vars)
@@ -797,6 +797,7 @@ function App() {
   }, [runCloudSave]);
 
   const tenantCssParts = useMemo(() => extractLeadingRemoteCssImports(tenantCssBundled), [tenantCssBundled]);
+  // Tenant `rest` before font :root vars — @import must stay first in the injected sheet (ADR-001).
   const resolvedTenantCss = useMemo(
     () => [tenantCssParts.rest, buildThemeFontVarsCss(themeConfig)].filter(Boolean).join('\n'),
     [tenantCssParts, themeConfig],

@@ -27,11 +27,7 @@ import { useOlonForms } from '@/lib/useOlonForms';
 import { OlonFormsContext } from '@olonjs/core';
 import { iconMap } from '@/lib/IconResolver';
 
-import tenantRemoteCss from './fonts.css?inline';
 import tenantCss from './index.css?inline';
-
-/** Remote @import must be leading text for extractLeadingRemoteCssImports (see fonts.css). */
-const tenantCssBundled = `${tenantRemoteCss}\n${tenantCss}`;
 
 // Cloud Configuration (Injected by Vercel/Netlify Env Vars)
 const CLOUD_API_URL =
@@ -371,11 +367,10 @@ function buildThemeFontVarsCss(input: unknown): string {
   const tokens = isObjectRecord(input.tokens) ? input.tokens : null;
   const typography = tokens && isObjectRecord(tokens.typography) ? tokens.typography : null;
   const fontFamily = typography && isObjectRecord(typography.fontFamily) ? typography.fontFamily : null;
-  const primary = typeof fontFamily?.primary === 'string' ? fontFamily.primary : "'Source Serif 4', Georgia, serif";
-  const mono = typeof fontFamily?.mono === 'string' ? fontFamily.mono : "'IBM Plex Mono', monospace";
-  const display = typeof fontFamily?.display === 'string' ? fontFamily.display : "'Cormorant Garamond', Georgia, serif";
-  const serif = typeof fontFamily?.serif === 'string' ? fontFamily.serif : display;
-  return `:root{--theme-font-primary:${primary};--theme-font-serif:${serif};--theme-font-mono:${mono};--theme-font-display:${display};}`;
+  const primary = typeof fontFamily?.primary === 'string' ? fontFamily.primary : "'Instrument Sans', system-ui, sans-serif";
+  const serif = typeof fontFamily?.serif === 'string' ? fontFamily.serif : "'Instrument Serif', Georgia, serif";
+  const mono = typeof fontFamily?.mono === 'string' ? fontFamily.mono : "'JetBrains Mono', monospace";
+  return `:root{--theme-font-primary:${primary};--theme-font-serif:${serif};--theme-font-mono:${mono};}`;
 }
 
 const REMOTE_CSS_LINK_ATTR = 'data-jp-tenant-remote-css';
@@ -829,7 +824,7 @@ function App() {
     void runCloudSave(pendingCloudSave.current, false);
   }, [runCloudSave]);
 
-  const tenantCssParts = useMemo(() => extractLeadingRemoteCssImports(tenantCssBundled), [tenantCssBundled]);
+  const tenantCssParts = useMemo(() => extractLeadingRemoteCssImports(tenantCss), [tenantCss]);
   const resolvedTenantCss = useMemo(
     () => [buildThemeFontVarsCss(themeConfig), tenantCssParts.rest].filter(Boolean).join('\n'),
     [tenantCssParts],

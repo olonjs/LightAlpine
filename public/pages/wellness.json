@@ -13,16 +13,8 @@
         "title": "Wellness & Spa Sanctuary",
         "description": "Discover holistic wellness in our world-class spa, where ancient Alpine healing traditions meet modern therapeutic techniques.",
         "breadcrumbs": [
-          {
-            "id": "breadcrumb-home",
-            "label": "Home",
-            "href": "/"
-          },
-          {
-            "id": "breadcrumb-wellness",
-            "label": "Wellness",
-            "href": "/wellness"
-          }
+          { "id": "breadcrumb-home", "label": "Home", "href": "/" },
+          { "id": "breadcrumb-wellness", "label": "Wellness", "href": "/wellness" }
         ]
       },
       "settings": {}
@@ -110,3 +102,4 @@
     }
   ]
 }
+

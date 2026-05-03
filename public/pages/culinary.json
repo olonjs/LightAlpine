@@ -13,16 +13,8 @@
         "title": "Culinary Excellence",
         "description": "Our Michelin-starred kitchen celebrates the rich culinary heritage of the Alps through innovative techniques and the finest local ingredients.",
         "breadcrumbs": [
-          {
-            "id": "breadcrumb-home",
-            "label": "Home",
-            "href": "/"
-          },
-          {
-            "id": "breadcrumb-culinary",
-            "label": "Culinary",
-            "href": "/culinary"
-          }
+          { "id": "breadcrumb-home", "label": "Home", "href": "/" },
+          { "id": "breadcrumb-culinary", "label": "Culinary", "href": "/culinary" }
         ]
       },
       "settings": {}
@@ -119,3 +111,4 @@
     }
   ]
 }
+

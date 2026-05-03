@@ -234,7 +234,7 @@ function NavLinks() {
 }
 
 function NavActions() {
-  const { actions, closeMobile } = useHeaderNavContext();
+  const { actions } = useHeaderNavContext();
   return (
     <motion.div
       className="hidden items-center gap-2 lg:flex"

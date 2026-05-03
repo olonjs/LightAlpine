@@ -13,16 +13,8 @@
         "title": "Luxury Alpine Suites",
         "description": "Each accommodation is thoughtfully designed to maximize your connection with the surrounding Dolomites landscape while providing the utmost in luxury and comfort.",
         "breadcrumbs": [
-          {
-            "id": "breadcrumb-home",
-            "label": "Home",
-            "href": "/"
-          },
-          {
-            "id": "breadcrumb-accommodations",
-            "label": "Accommodations",
-            "href": "/accommodations"
-          }
+          { "id": "breadcrumb-home", "label": "Home", "href": "/" },
+          { "id": "breadcrumb-accommodations", "label": "Accommodations", "href": "/accommodations" }
         ]
       },
       "settings": {}
@@ -51,12 +43,7 @@
               "Artisan-crafted furniture",
               "Complimentary spa access"
             ],
-            "cta": {
-              "id": "panorama-cta",
-              "label": "Book Panorama Loft",
-              "href": "/book?suite=panorama",
-              "variant": "primary"
-            }
+            "cta": { "id": "panorama-cta", "label": "Book Panorama Loft", "href": "/book?suite=panorama", "variant": "primary" }
           },
           {
             "id": "suite-forest-villa",
@@ -75,12 +62,7 @@
               "Natural stone finishes",
               "In-room wellness amenities"
             ],
-            "cta": {
-              "id": "forest-cta",
-              "label": "Reserve Forest Villa",
-              "href": "/book?suite=forest",
-              "variant": "primary"
-            }
+            "cta": { "id": "forest-cta", "label": "Reserve Forest Villa", "href": "/book?suite=forest", "variant": "primary" }
           },
           {
             "id": "suite-peak-penthouse",
@@ -99,12 +81,7 @@
               "Wine cellar selection",
               "Butler service included"
             ],
-            "cta": {
-              "id": "penthouse-cta",
-              "label": "Inquire About Penthouse",
-              "href": "/book?suite=penthouse",
-              "variant": "primary"
-            }
+            "cta": { "id": "penthouse-cta", "label": "Inquire About Penthouse", "href": "/book?suite=penthouse", "variant": "primary" }
           }
         ]
       },
@@ -117,14 +94,10 @@
         "title": "Ready to Experience Alpine Luxury?",
         "description": "Contact our reservations team to discuss the perfect suite for your mountain getaway.",
         "placeholder": "Your preferred dates",
-        "cta": {
-          "id": "booking-cta",
-          "label": "Check Availability",
-          "href": "/book",
-          "variant": "primary"
-        }
+        "cta": { "id": "booking-cta", "label": "Check Availability", "href": "/book", "variant": "primary" }
       },
       "settings": {}
     }
   ]
 }
+

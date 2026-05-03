@@ -1,0 +1,152 @@
+{
+  "name": "Lumina Alpine Retreat - Airy Edition",
+  "version": "1.0.0",
+  "tokens": {
+    "colors": {
+      "background": "#192620",
+      "foreground": "#F4F7F5",
+      "card": "#22332B",
+      "card-foreground": "#F4F7F5",
+      "elevated": "#2A3D34",
+      "overlay": "#101A15",
+      "popover": "#22332B",
+      "popover-foreground": "#F4F7F5",
+      "muted": "#2F453A",
+      "muted-foreground": "#92B2A1",
+      "placeholder": "#769E89",
+      "primary": "#769E89",
+      "primary-foreground": "#192620",
+      "primary-light": "#92B2A1",
+      "primary-dark": "#5C826F",
+      "primary-50": "#F4F7F5",
+      "primary-100": "#E4ECE7",
+      "primary-200": "#C9D9D0",
+      "primary-300": "#ADC5B8",
+      "primary-400": "#92B2A1",
+      "primary-500": "#769E89",
+      "primary-600": "#5C826F",
+      "primary-700": "#466354",
+      "primary-800": "#2F453A",
+      "primary-900": "#192620",
+      "accent": "#D9B382",
+      "accent-foreground": "#192620",
+      "secondary": "#2F453A",
+      "secondary-foreground": "#F4F7F5",
+      "border": "#2F453A",
+      "border-strong": "#466354",
+      "input": "#2F453A",
+      "ring": "#769E89",
+      "destructive": "#E06C6C",
+      "destructive-foreground": "#FFFFFF",
+      "destructive-border": "#8F3A3A",
+      "destructive-ring": "#E06C6C",
+      "success": "#6DBA82",
+      "success-foreground": "#192620",
+      "success-border": "#3A7A4D",
+      "success-indicator": "#6DBA82",
+      "warning": "#E0B86C",
+      "warning-foreground": "#192620",
+      "warning-border": "#8F703A",
+      "info": "#6C9CE0",
+      "info-foreground": "#192620",
+      "info-border": "#3A5C8F"
+    },
+    "modes": {
+      "light": {
+        "colors": {
+          "background": "#FAFCFB",
+          "foreground": "#192620",
+          "card": "#FFFFFF",
+          "card-foreground": "#192620",
+          "elevated": "#F4F7F5",
+          "overlay": "#E4ECE7",
+          "popover": "#FFFFFF",
+          "popover-foreground": "#192620",
+          "muted": "#E4ECE7",
+          "muted-foreground": "#5C826F",
+          "placeholder": "#92B2A1",
+          "primary": "#466354",
+          "primary-foreground": "#FFFFFF",
+          "primary-light": "#5C826F",
+          "primary-dark": "#2F453A",
+          "accent": "#C29B62",
+          "accent-foreground": "#FFFFFF",
+          "secondary": "#E4ECE7",
+          "secondary-foreground": "#192620",
+          "border": "#C9D9D0",
+          "border-strong": "#ADC5B8",
+          "input": "#C9D9D0",
+          "ring": "#466354",
+          "destructive": "#DC2626",
+          "destructive-foreground": "#FFFFFF",
+          "destructive-border": "#F87171",
+          "destructive-ring": "#EF4444",
+          "success": "#16A34A",
+          "success-foreground": "#FFFFFF",
+          "success-border": "#86EFAC",
+          "success-indicator": "#22C55E",
+          "warning": "#D97706",
+          "warning-foreground": "#FFFFFF",
+          "warning-border": "#FCD34D",
+          "info": "#2563EB",
+          "info-foreground": "#FFFFFF",
+          "info-border": "#93C5FD"
+        }
+      }
+    },
+    "typography": {
+      "fontFamily": {
+        "primary": "\"Source Serif 4\", Helvetica, Arial, sans-serif",
+        "mono": "\"IBM Plex Mono\", Helvetica, Arial, sans-serif",
+        "display": "\"Cormorant Garamond\", Helvetica, Arial, sans-serif"
+      },
+      "wordmark": {
+        "fontFamily": "\"Cormorant Garamond\", Helvetica, Arial, sans-serif",
+        "weight": "600"
+      },
+      "scale": {
+        "xs": "0.75rem",
+        "sm": "0.875rem",
+        "base": "1rem",
+        "lg": "1.125rem",
+        "xl": "1.25rem",
+        "2xl": "1.5rem",
+        "3xl": "1.875rem",
+        "4xl": "2.25rem",
+        "5xl": "3rem"
+      },
+      "tracking": {
+        "tight": "-0.02em",
+        "normal": "0em",
+        "wide": "0.04em",
+        "widest": "0.14em"
+      },
+      "leading": {
+        "tight": "1.2",
+        "normal": "1.5",
+        "relaxed": "1.7"
+      }
+    },
+    "borderRadius": {
+      "sm": "0.25rem",
+      "md": "0.5rem",
+      "lg": "0.75rem",
+      "xl": "1.25rem",
+      "full": "9999px"
+    },
+    "spacing": {
+      "container-max": "80rem",
+      "section-y": "6rem",
+      "header-h": "5rem"
+    },
+    "zIndex": {
+      "base": "0",
+      "elevated": "10",
+      "dropdown": "20",
+      "sticky": "40",
+      "overlay": "50",
+      "modal": "60",
+      "toast": "100"
+    }
+  }
+}

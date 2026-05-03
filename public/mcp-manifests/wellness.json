@@ -1,0 +1,80 @@
+{
+  "version": "1.0.0",
+  "kind": "olonjs-page-mcp-manifest",
+  "generatedAt": "2026-05-03T18:07:45.417Z",
+  "slug": "wellness",
+  "title": "Wellness & Spa - Lumina Alpine Retreat",
+  "description": "Rejuvenate your body and soul with our award-winning spa treatments, thermal pools, and wellness programs inspired by Alpine traditions.",
+  "contractHref": "/schemas/wellness.schema.json",
+  "transport": {
+    "kind": "window-message",
+    "requestType": "olonjs:webmcp:tool-call",
+    "resultType": "olonjs:webmcp:tool-result",
+    "target": "window"
+  },
+  "capabilities": {
+    "resources": [
+      {
+        "uri": "olon://pages/wellness",
+        "name": "Wellness & Spa - Lumina Alpine Retreat Data",
+        "mimeType": "application/json",
+        "description": "Structured content for the wellness page."
+      },
+      {
+        "uri": "olon://pages",
+        "name": "Site Map",
+        "mimeType": "application/json",
+        "description": "Structured content for the map of this site"
+      }
+    ]
+  },
+  "sectionTypes": [
+    "header",
+    "footer",
+    "page-hero",
+    "spa-treatments",
+    "resort-highlights"
+  ],
+  "sectionInstances": [
+    {
+      "id": "global-header",
+      "type": "header",
+      "scope": "global",
+      "label": "header"
+    },
+    {
+      "id": "global-footer",
+      "type": "footer",
+      "scope": "global",
+      "label": "footer"
+    },
+    {
+      "id": "wellness-hero",
+      "type": "page-hero",
+      "scope": "local",
+      "label": "Wellness & Spa Sanctuary"
+    },
+    {
+      "id": "spa-treatments",
+      "type": "spa-treatments",
+      "scope": "local",
+      "label": "Alpine Wellness Rituals"
+    },
+    {
+      "id": "wellness-highlights",
+      "type": "resort-highlights",
+      "scope": "local",
+      "label": "Complete Wellness Experience"
+    }
+  ],
+  "tools": [
+    {
+      "name": "update-section",
+      "description": "Update a section field in the Studio draft. Does not persist — call save when all updates are complete. Use sectionType to select the matching schema from sectionSchemas."
+    },
+    {
+      "name": "save",
+      "description": "Persist all pending draft changes using the active save mode (local file, hot save, or save2repo). Call once after all update-section calls are complete."
+    }
+  ]
+}

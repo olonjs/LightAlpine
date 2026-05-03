@@ -1,0 +1,112 @@
+{
+  "id": "wellness-page",
+  "slug": "wellness",
+  "meta": {
+    "title": "Wellness & Spa - Lumina Alpine Retreat",
+    "description": "Rejuvenate your body and soul with our award-winning spa treatments, thermal pools, and wellness programs inspired by Alpine traditions."
+  },
+  "sections": [
+    {
+      "id": "wellness-hero",
+      "type": "page-hero",
+      "data": {
+        "title": "Wellness & Spa Sanctuary",
+        "description": "Discover holistic wellness in our world-class spa, where ancient Alpine healing traditions meet modern therapeutic techniques.",
+        "breadcrumbs": [
+          {
+            "id": "breadcrumb-home",
+            "label": "Home",
+            "href": "/"
+          },
+          {
+            "id": "breadcrumb-wellness",
+            "label": "Wellness",
+            "href": "/wellness"
+          }
+        ]
+      },
+      "settings": {}
+    },
+    {
+      "id": "spa-treatments",
+      "type": "spa-treatments",
+      "data": {
+        "label": "Signature Treatments",
+        "title": "Alpine Wellness Rituals",
+        "description": "Each treatment is designed to harmonize your energy with the natural rhythms of the mountains, using locally-sourced ingredients and time-honored techniques.",
+        "treatments": [
+          {
+            "id": "treatment-alpine-stone",
+            "title": "Alpine Stone Ritual",
+            "duration": "90 minutes",
+            "price": "€280",
+            "description": "Our signature treatment combines heated Dolomite stones with aromatic pine and juniper oils. The ritual begins with gentle exfoliation using mineral-rich Alpine salts, followed by a full-body massage that releases deep tension and promotes circulation. Conclude with a restorative meditation overlooking mountain peaks."
+          },
+          {
+            "id": "treatment-thermal-journey",
+            "title": "Thermal Circuit Journey",
+            "duration": "120 minutes",
+            "price": "€180",
+            "description": "Experience the therapeutic benefits of our natural thermal pools. This journey includes alternating hot and cold treatments: Finnish sauna with mountain herbs, ice fountain, thermal soaking pools, and concludes in our infinity relaxation pool with mountain views."
+          },
+          {
+            "id": "treatment-mountain-detox",
+            "title": "Mountain Detox Wrap",
+            "duration": "75 minutes",
+            "price": "€220",
+            "description": "Purify and energize with this full-body treatment using locally-harvested Alpine botanicals. Clay and mineral wrap removes toxins while organic mountain honey and Swiss herb oils nourish the skin. Includes lymphatic drainage massage and herbal tea ritual."
+          },
+          {
+            "id": "treatment-couples-retreat",
+            "title": "Couples Mountain Retreat",
+            "duration": "180 minutes",
+            "price": "€650",
+            "description": "Share a transformative wellness experience in our couples' treatment suite. Includes side-by-side Alpine Stone Rituals, private thermal pool access, champagne and Alpine cheese tasting, and meditation session with mountain view backdrop."
+          }
+        ]
+      },
+      "settings": {}
+    },
+    {
+      "id": "wellness-highlights",
+      "type": "resort-highlights",
+      "data": {
+        "label": "Facilities",
+        "title": "Complete Wellness Experience",
+        "highlights": [
+          {
+            "id": "facility-thermal",
+            "title": "Natural Thermal Pools",
+            "description": "Soak in our naturally heated mineral pools with stunning Dolomites backdrop.",
+            "category": "Thermal",
+            "image": {
+              "url": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=85",
+              "alt": "Natural thermal pool surrounded by rocks with steam rising and mountain views in background"
+            }
+          },
+          {
+            "id": "facility-yoga",
+            "title": "Mountain Yoga Pavilion",
+            "description": "Practice yoga and meditation in our glass pavilion suspended over the valley.",
+            "category": "Mindfulness",
+            "image": {
+              "url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=85",
+              "alt": "Glass yoga studio with mountain panorama and meditation cushions arranged in peaceful setting"
+            }
+          },
+          {
+            "id": "facility-sauna",
+            "title": "Finnish Panorama Sauna",
+            "description": "Sweat away stress in our glass-walled sauna with 180-degree mountain views.",
+            "category": "Thermal",
+            "image": {
+              "url": "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&q=85",
+              "alt": "Modern glass sauna with panoramic mountain views and wooden benches"
+            }
+          }
+        ]
+      },
+      "settings": {}
+    }
+  ]
+}

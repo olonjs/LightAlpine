@@ -1,0 +1,130 @@
+{
+  "id": "accommodations-page",
+  "slug": "accommodations",
+  "meta": {
+    "title": "Luxury Accommodations - Lumina Alpine Retreat",
+    "description": "Discover our collection of luxury suites featuring panoramic Dolomites views, premium amenities, and sustainable design in the heart of the Italian Alps."
+  },
+  "sections": [
+    {
+      "id": "accommodations-hero",
+      "type": "page-hero",
+      "data": {
+        "title": "Luxury Alpine Suites",
+        "description": "Each accommodation is thoughtfully designed to maximize your connection with the surrounding Dolomites landscape while providing the utmost in luxury and comfort.",
+        "breadcrumbs": [
+          {
+            "id": "breadcrumb-home",
+            "label": "Home",
+            "href": "/"
+          },
+          {
+            "id": "breadcrumb-accommodations",
+            "label": "Accommodations",
+            "href": "/accommodations"
+          }
+        ]
+      },
+      "settings": {}
+    },
+    {
+      "id": "accommodations-showcase",
+      "type": "accommodation-showcase",
+      "data": {
+        "label": "Premium Suites",
+        "title": "Elevated Alpine Living",
+        "accommodations": [
+          {
+            "id": "suite-panorama-loft",
+            "title": "Alpine Panorama Loft",
+            "subtitle": "Corner Suite • 85 sqm",
+            "description": "Our signature corner suite offers 270-degree views of the Dolomites through floor-to-ceiling windows. Features include a private balcony with hot tub, wood-burning fireplace, and handcrafted furniture by local artisans.",
+            "image": {
+              "url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&q=90",
+              "alt": "Luxurious corner suite with panoramic mountain views, modern alpine decor, and floor-to-ceiling windows"
+            },
+            "features": [
+              "270-degree mountain views",
+              "Private balcony with hot tub",
+              "Wood-burning fireplace",
+              "Marble bathroom with rain shower",
+              "Artisan-crafted furniture",
+              "Complimentary spa access"
+            ],
+            "cta": {
+              "id": "panorama-cta",
+              "label": "Book Panorama Loft",
+              "href": "/book?suite=panorama",
+              "variant": "primary"
+            }
+          },
+          {
+            "id": "suite-forest-villa",
+            "title": "Forest Villa Suite",
+            "subtitle": "Ground Floor • 110 sqm",
+            "description": "Immerse yourself in nature with direct forest access from your private terrace. This spacious ground-floor suite features natural materials, a standalone copper tub, and seamless indoor-outdoor living.",
+            "image": {
+              "url": "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=800&q=90",
+              "alt": "Ground floor suite with direct forest access, natural wood interiors, and private terrace"
+            },
+            "features": [
+              "Direct forest access",
+              "110 sqm living space",
+              "Private garden terrace",
+              "Copper soaking tub",
+              "Natural stone finishes",
+              "In-room wellness amenities"
+            ],
+            "cta": {
+              "id": "forest-cta",
+              "label": "Reserve Forest Villa",
+              "href": "/book?suite=forest",
+              "variant": "primary"
+            }
+          },
+          {
+            "id": "suite-peak-penthouse",
+            "title": "Peak Penthouse",
+            "subtitle": "Top Floor • 150 sqm",
+            "description": "The ultimate alpine retreat featuring a private rooftop deck with 360-degree mountain views, dedicated concierge service, and exclusive access to our helicopter landing pad for scenic flights.",
+            "image": {
+              "url": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=90",
+              "alt": "Luxury penthouse with rooftop deck, panoramic mountain views, and premium alpine furnishings"
+            },
+            "features": [
+              "360-degree rooftop deck",
+              "150 sqm penthouse suite",
+              "Dedicated concierge service",
+              "Private helicopter access",
+              "Wine cellar selection",
+              "Butler service included"
+            ],
+            "cta": {
+              "id": "penthouse-cta",
+              "label": "Inquire About Penthouse",
+              "href": "/book?suite=penthouse",
+              "variant": "primary"
+            }
+          }
+        ]
+      },
+      "settings": {}
+    },
+    {
+      "id": "accommodations-newsletter",
+      "type": "newsletter-cta",
+      "data": {
+        "title": "Ready to Experience Alpine Luxury?",
+        "description": "Contact our reservations team to discuss the perfect suite for your mountain getaway.",
+        "placeholder": "Your preferred dates",
+        "cta": {
+          "id": "booking-cta",
+          "label": "Check Availability",
+          "href": "/book",
+          "variant": "primary"
+        }
+      },
+      "settings": {}
+    }
+  ]
+}

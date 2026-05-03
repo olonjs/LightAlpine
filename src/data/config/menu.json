@@ -1,0 +1,61 @@
+{
+  "main": [
+    {
+      "id": "nav-home",
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "id": "nav-accommodations",
+      "label": "Accommodations",
+      "href": "/accommodations"
+    },
+    {
+      "id": "nav-wellness",
+      "label": "Wellness & Spa",
+      "href": "/wellness"
+    },
+    {
+      "id": "nav-culinary",
+      "label": "Culinary",
+      "href": "/culinary"
+    },
+    {
+      "id": "nav-experiences",
+      "label": "Experiences",
+      "href": "/experiences"
+    }
+  ],
+  "headerActions": [
+    {
+      "id": "cta-login",
+      "label": "Guest Portal",
+      "href": "/#",
+      "variant": "ghost"
+    },
+    {
+      "id": "cta-book",
+      "label": "Book Now",
+      "href": "/accommodations",
+      "variant": "primary"
+    }
+  ],
+  "footer": [
+    {
+      "label": "About",
+      "href": "/about"
+    },
+    {
+      "label": "Privacy Policy",
+      "href": "/privacy"
+    },
+    {
+      "label": "Terms of Service",
+      "href": "/terms"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact"
+    }
+  ]
+}

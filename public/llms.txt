@@ -1,0 +1,29 @@
+# Lumina Alpine Retreat - Luxury Eco-Resort in the Dolomites
+
+Experience unparalleled luxury in the heart of the Italian Dolomites. Premium eco-resort featuring world-class spa, Michelin-starred dining, and exclusive alpine adventures.
+
+> **AI Agents:** This site is built with OlonJS. It exposes a native Model Context Protocol (MCP) manifest for direct structural interaction. 
+> To read the site map or access structured content, use the URI `olon://pages` or `olon://pages/[slug]`.
+> Endpoint: `/mcp-manifest.json`
+
+## Pages
+
+- **[Luxury Accommodations - Lumina Alpine Retreat](/accommodations)** (`accommodations`)
+  Discover our collection of luxury suites featuring panoramic Dolomites views, premium amenities, and sustainable design in the heart of the Italian Alps.
+  *Contract:* `/schemas/accommodations.schema.json` | *Manifest:* `/mcp-manifests/accommodations.json`
+
+- **[Culinary Excellence - Lumina Alpine Retreat](/culinary)** (`culinary`)
+  Savor exceptional Michelin-starred cuisine featuring locally-sourced Alpine ingredients, artisanal preparations, and an award-winning wine cellar.
+  *Contract:* `/schemas/culinary.schema.json` | *Manifest:* `/mcp-manifests/culinary.json`
+
+- **[Alpine Experiences - Lumina Alpine Retreat](/experiences)** (`experiences`)
+  Discover curated outdoor adventures in the Dolomites: world-class skiing, guided hiking, helicopter tours, and exclusive mountain experiences.
+  *Contract:* `/schemas/experiences.schema.json` | *Manifest:* `/mcp-manifests/experiences.json`
+
+- **[Lumina Alpine Retreat - Luxury Eco-Resort in the Dolomites](/)** (`home`)
+  Experience unparalleled luxury in the heart of the Italian Dolomites. Premium eco-resort featuring world-class spa, Michelin-starred dining, and exclusive alpine adventures.
+  *Contract:* `/schemas/home.schema.json` | *Manifest:* `/mcp-manifests/home.json`
+
+- **[Wellness & Spa - Lumina Alpine Retreat](/wellness)** (`wellness`)
+  Rejuvenate your body and soul with our award-winning spa treatments, thermal pools, and wellness programs inspired by Alpine traditions.
+  *Contract:* `/schemas/wellness.schema.json` | *Manifest:* `/mcp-manifests/wellness.json`

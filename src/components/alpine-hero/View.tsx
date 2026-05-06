@@ -26,6 +26,7 @@ export const AlpineHero: React.FC<{ data: AlpineHeroData; settings: AlpineHeroSe
           '--local-border': 'var(--border)',
           '--local-radius-md': 'var(--theme-radius-md)',
           '--local-radius-lg': 'var(--theme-radius-lg)',
+          transform: 'translateY(-95px)',
         } as React.CSSProperties
       }
       className="relative z-0 flex min-h-screen items-center justify-center overflow-hidden bg-[var(--local-bg)]"

@@ -61,6 +61,8 @@
   --warning-foreground:   var(--theme-colors-warning-foreground);
   --info:                 var(--theme-colors-info);
   --info-foreground:      var(--theme-colors-info-foreground);
+  --glass-surface:        var(--theme-colors-glass-surface);
+  --glass-border:         var(--theme-colors-glass-border);
   --radius:               var(--theme-radius-lg);
 
   /* Theme-derived helpers for section-owned demo/mockup surfaces. */
@@ -106,6 +108,8 @@
   --warning-foreground:   var(--theme-modes-light-colors-warning-foreground);
   --info:                 var(--theme-modes-light-colors-info);
   --info-foreground:      var(--theme-modes-light-colors-info-foreground);
+  --glass-surface:        var(--theme-modes-light-colors-glass-surface);
+  --glass-border:         var(--theme-modes-light-colors-glass-border);
 }
 
 @layer base {

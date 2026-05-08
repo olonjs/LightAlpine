@@ -24,6 +24,8 @@ export const AlpineHero: React.FC<{ data: AlpineHeroData; settings: AlpineHeroSe
           '--local-accent': 'var(--accent)',
           '--local-accent-soft': 'color-mix(in oklch, var(--accent) 10%, transparent)',
           '--local-border': 'var(--border)',
+          '--local-glass-bg': 'var(--glass-surface)',
+          '--local-glass-border': 'var(--glass-border)',
           '--local-radius-md': 'var(--theme-radius-md)',
           '--local-radius-lg': 'var(--theme-radius-lg)',
           transform: 'translateY(-95px)',
@@ -56,7 +58,7 @@ export const AlpineHero: React.FC<{ data: AlpineHeroData; settings: AlpineHeroSe
 
       <div className="relative z-10 mx-auto max-w-[900px] px-8 text-center">
         {data.badge ? (
-          <div className="jp-animate-in mb-8 inline-flex items-center gap-2 rounded-full border border-[var(--local-border)] bg-[var(--local-accent-soft)] px-4 py-1.5 font-mono text-[0.70rem] font-semibold uppercase tracking-widest text-[var(--local-accent)]">
+          <div className="jp-animate-in mb-8 inline-flex items-center gap-2 rounded-full border border-[var(--local-glass-border)] bg-[var(--local-glass-bg)] backdrop-blur-md px-4 py-1.5 font-mono text-[0.70rem] font-semibold uppercase tracking-widest text-[var(--local-primary)]">
             <span className="jp-pulse-dot h-1.5 w-1.5 rounded-full bg-[var(--local-primary)]" aria-hidden />
             <span data-jp-field="badge">{data.badge}</span>
           </div>

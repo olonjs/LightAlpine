@@ -49,7 +49,9 @@
       "warning-border": "#8F703A",
       "info": "#6C9CE0",
       "info-foreground": "#192620",
-      "info-border": "#3A5C8F"
+      "info-border": "#3A5C8F",
+      "glass-surface": "rgba(244, 247, 245, 0.10)",
+      "glass-border": "rgba(244, 247, 245, 0.20)"
     },
     "modes": {
       "light": {
@@ -90,7 +92,9 @@
           "warning-border": "#FCD34D",
           "info": "#2563EB",
           "info-foreground": "#FFFFFF",
-          "info-border": "#93C5FD"
+          "info-border": "#93C5FD",
+          "glass-surface": "rgba(25, 38, 32, 0.08)",
+          "glass-border": "rgba(25, 38, 32, 0.18)"
         }
       }
     },

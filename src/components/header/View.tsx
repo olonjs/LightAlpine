@@ -25,6 +25,7 @@ import {
 } from 'motion/react';
 import useMeasure from 'react-use-measure';
 import { cn } from '@/lib/utils';
+import { isInAppPathHref } from '@/lib/isInAppPathHref';
 import { Button } from '@/components/ui/button';
 import { useTheme } from '@/components/ThemeProvider';
 import type { HeaderData, HeaderSettings } from './types';
@@ -38,25 +39,6 @@ function normalizePath(path: string): string {
 
 function hrefIsActive(pathname: string, href: string): boolean {
   return normalizePath(pathname) === normalizePath(href);
-}
-
-/** Same-origin app paths → React Router `Link` (no full document reload). External / special → `<a>`. @see docs/decisions/ADR-002-spa-navigation-react-router-link.md */
-function isInAppPathHref(href: string): boolean {
-  const t = href.trim();
-  if (!t) return false;
-  const lower = t.toLowerCase();
-  if (
-    lower.startsWith('http://')
-    || lower.startsWith('https://')
-    || lower.startsWith('mailto:')
-    || lower.startsWith('tel:')
-    || lower.startsWith('//')
-    || lower.startsWith('javascript:')
-    || lower.startsWith('data:')
-  ) {
-    return false;
-  }
-  return t.startsWith('/');
 }
 
 const MotionLink = motion(Link);

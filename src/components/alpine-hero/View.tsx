@@ -1,8 +1,10 @@
 // Layout: Hero=C (FULLSCREEN CINEMATIC), Features=A (BENTO GRID)
 // IDAC v1.2 + ECIP §5.5 / JAP: nested targets use ancestor data-jp-item-id + data-jp-item-field, leaf scalars use data-jp-field (see @olonjs/core ti() path build).
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
+import { isInAppPathHref } from '@/lib/isInAppPathHref';
 import type { AlpineHeroData, AlpineHeroSettings } from './types';
 
 const BG_ITEM_ID = 'alpine-hero-backgroundImage';
@@ -87,30 +89,44 @@ export const AlpineHero: React.FC<{ data: AlpineHeroData; settings: AlpineHeroSe
         </p>
 
         <div className="jp-animate-in jp-d3 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <div data-jp-item-field="primaryCta" data-jp-item-id={primaryId}>
-            <Button
-              asChild
-              className="inline-flex items-center gap-2 rounded-[var(--local-radius-md)] bg-[var(--local-primary)] px-8 py-4 font-semibold text-[var(--local-primary-foreground)] transition-opacity hover:opacity-90"
-            >
-              <a href={data.primaryCta.href} data-jp-field="href">
-                <span data-jp-field="label">{data.primaryCta.label}</span>
-              </a>
-            </Button>
-            <span className="sr-only" data-jp-field="variant">
-              {data.primaryCta.variant}
-            </span>
-          </div>
+          {data.primaryCta?.label ? (
+            <div data-jp-item-field="primaryCta" data-jp-item-id={primaryId}>
+              <Button
+                asChild
+                className="inline-flex items-center gap-2 rounded-[var(--local-radius-md)] bg-[var(--local-primary)] px-8 py-4 font-semibold text-[var(--local-primary-foreground)] transition-opacity hover:opacity-90"
+              >
+                {isInAppPathHref(data.primaryCta.href) ? (
+                  <Link to={data.primaryCta.href} viewTransition data-jp-field="href">
+                    <span data-jp-field="label">{data.primaryCta.label}</span>
+                  </Link>
+                ) : (
+                  <a href={data.primaryCta.href} data-jp-field="href">
+                    <span data-jp-field="label">{data.primaryCta.label}</span>
+                  </a>
+                )}
+              </Button>
+              <span className="sr-only" data-jp-field="variant">
+                {data.primaryCta.variant}
+              </span>
+            </div>
+          ) : null}
 
-          {data.secondaryCta ? (
+          {data.secondaryCta?.label ? (
             <div data-jp-item-field="secondaryCta" data-jp-item-id={secondaryId}>
               <Button
                 asChild
                 variant="outline"
                 className="inline-flex items-center gap-2 rounded-[var(--local-radius-md)] border border-[var(--local-border)] px-8 py-4 font-semibold text-[var(--local-text)] transition hover:border-[var(--local-accent)]"
               >
-                <a href={data.secondaryCta.href} data-jp-field="href">
-                  <span data-jp-field="label">{data.secondaryCta.label}</span>
-                </a>
+                {isInAppPathHref(data.secondaryCta.href) ? (
+                  <Link to={data.secondaryCta.href} viewTransition data-jp-field="href">
+                    <span data-jp-field="label">{data.secondaryCta.label}</span>
+                  </Link>
+                ) : (
+                  <a href={data.secondaryCta.href} data-jp-field="href">
+                    <span data-jp-field="label">{data.secondaryCta.label}</span>
+                  </a>
+                )}
               </Button>
               <span className="sr-only" data-jp-field="variant">
                 {data.secondaryCta.variant}

@@ -14,6 +14,8 @@ export const ResortHighlights: React.FC<{ data: ResortHighlightsData; settings: 
       '--local-border': 'var(--border)',
       '--local-radius-lg': 'var(--theme-radius-lg)',
       '--local-primary': 'var(--primary)',
+      '--local-text-on-image': 'var(--semantic-overlay-text-on-image)',
+      '--local-text-on-image-muted': 'var(--semantic-overlay-text-on-image-muted)',
     } as React.CSSProperties}
     className="relative z-0 py-28 bg-[var(--local-bg)]"
   >
@@ -60,11 +62,11 @@ export const ResortHighlights: React.FC<{ data: ResortHighlightsData; settings: 
                 </div>
               )}
               
-              <h3 className="font-display font-bold text-[1.2rem] leading-tight tracking-tight text-white mb-3">
+              <h3 className="font-display font-bold text-xl leading-tight tracking-tight text-[var(--local-text-on-image)] mb-3">
                 {highlight.title}
               </h3>
-              
-              <p className="text-white/80 text-sm leading-relaxed">
+
+              <p className="text-[var(--local-text-on-image-muted)] text-sm leading-relaxed">
                 {highlight.description}
               </p>
             </CardContent>

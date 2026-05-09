@@ -1,169 +1,169 @@
 {
   "id": "home-page",
-  "slug": "home",
   "meta": {
     "title": "Lumina Alpine Retreat - Luxury Eco-Resort in the Dolomites",
     "description": "Experience unparalleled luxury in the heart of the Italian Dolomites. Premium eco-resort featuring world-class spa, Michelin-starred dining, and exclusive alpine adventures."
   },
+  "slug": "home",
   "sections": [
     {
       "id": "home-hero",
-      "type": "alpine-hero",
       "data": {
-        "backgroundImage": {
-          "url": "https://www.familywelcome.org/wp-content/uploads/2020/01/Excelsior_Dolomites_Life_Resort_San_Vigilio_Dolomiti.jpg",
-          "alt": ""
-        },
         "badge": "Luxury Alpine Retreat",
         "title": "Where Mountains",
-        "titleHighlight": "Meet Serenity",
-        "description": "",
         "primaryCta": {
           "id": "hero-primary",
-          "label": "Reserve Your Stay",
           "href": "/book",
+          "label": "Reserve Your Stay",
           "variant": "primary"
         },
+        "description": "",
         "secondaryCta": {
           "id": "hero-secondary",
-          "label": "Explore Resort",
           "href": "/accommodations",
+          "label": "Explore Resort",
           "variant": "secondary"
+        },
+        "titleHighlight": "Meet Serenity",
+        "backgroundImage": {
+          "alt": "",
+          "url": "https://www.familywelcome.org/wp-content/uploads/2020/01/Excelsior_Dolomites_Life_Resort_San_Vigilio_Dolomiti.jpg"
         }
       },
+      "type": "alpine-hero",
       "settings": {}
     },
     {
       "id": "home-highlights",
-      "type": "resort-highlights",
       "data": {
         "label": "Resort Features",
         "title": "Alpine Excellence Redefined",
         "highlights": [
           {
             "id": "highlight-spa",
-            "title": "World-Class Spa",
-            "description": "Rejuvenate your body and soul with our award-winning wellness treatments inspired by Alpine traditions.",
-            "category": "Wellness",
             "image": {
-              "url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/282825433.jpg?k=629063342a71dc2ac0f37d15e4798379977c4e8076d90e4e086b06b2d6484a4b&o=",
-              "alt": ""
-            }
+              "alt": "",
+              "url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/282825433.jpg?k=629063342a71dc2ac0f37d15e4798379977c4e8076d90e4e086b06b2d6484a4b&o="
+            },
+            "title": "World-Class Spa",
+            "category": "Wellness",
+            "description": "Rejuvenate your body and soul with our award-winning wellness treatments inspired by Alpine traditions."
           },
           {
             "id": "highlight-skiing",
-            "title": "Elite Skiing Access",
-            "description": "Direct access to pristine Dolomiti Superski slopes with private ski concierge service.",
-            "category": "Adventure",
             "image": {
-              "url": "/assets/images/1777830786836-Gemini_Generated_Image_splobasplobasplo.jpg",
-              "alt": "Gemini_Generated_Image_splobasplobasplo.jpg"
-            }
+              "alt": "Gemini_Generated_Image_splobasplobasplo.jpg",
+              "url": "/assets/images/1777830786836-Gemini_Generated_Image_splobasplobasplo.jpg"
+            },
+            "title": "Elite Skiing Access",
+            "category": "Adventure",
+            "description": "Direct access to pristine Dolomiti Superski slopes with private ski concierge service."
           },
           {
             "id": "highlight-dining",
-            "title": "Michelin-Starred Cuisine",
-            "description": "Savor exceptional culinary artistry featuring locally-sourced Alpine ingredients.",
-            "category": "Culinary",
             "image": {
-              "url": "https://radice.jsonpages.io/assets/images/1771598312886-Firefly_a_tasting_menu_photo_with_multiple_plates_for_a_michelin_green_star_restaurant__detai_954770.png",
-              "alt": ""
-            }
+              "alt": "",
+              "url": "https://radice.jsonpages.io/assets/images/1771598312886-Firefly_a_tasting_menu_photo_with_multiple_plates_for_a_michelin_green_star_restaurant__detai_954770.png"
+            },
+            "title": "Michelin-Starred Cuisine",
+            "category": "Culinary",
+            "description": "Savor exceptional culinary artistry featuring locally-sourced Alpine ingredients."
           },
           {
             "id": "highlight-sustainability",
-            "title": "Eco-Luxury Pioneer",
-            "description": "Leading sustainable hospitality with carbon-neutral operations and local community partnerships.",
-            "category": "Sustainability",
             "image": {
-              "url": "/assets/images/1777831126920-Gemini_Generated_Image_v1yhxpv1yhxpv1yh.jpg",
-              "alt": "Gemini_Generated_Image_v1yhxpv1yhxpv1yh.jpg"
-            }
+              "alt": "Gemini_Generated_Image_v1yhxpv1yhxpv1yh.jpg",
+              "url": "/assets/images/1777831126920-Gemini_Generated_Image_v1yhxpv1yhxpv1yh.jpg"
+            },
+            "title": "Eco-Luxury Pioneer",
+            "category": "Sustainability",
+            "description": "Leading sustainable hospitality with carbon-neutral operations and local community partnerships."
           }
         ]
       },
+      "type": "resort-highlights",
       "settings": {}
     },
     {
       "id": "home-stats",
-      "type": "stats-band",
       "data": {
-        "title": "Alpine Excellence by Numbers",
         "stats": [
           {
             "id": "stat-1",
+            "label": "Guest Satisfaction",
             "number": "94",
-            "suffix": "%",
-            "label": "Guest Satisfaction"
+            "suffix": "%"
           },
           {
             "id": "stat-2",
-            "number": "15",
-            "label": "Luxury Suites"
+            "label": "Luxury Suites",
+            "number": "15"
           },
           {
             "id": "stat-3",
-            "number": "2",
-            "label": "Michelin Stars"
+            "label": "Michelin Stars",
+            "number": "2"
           },
           {
             "id": "stat-4",
-            "number": "1",
-            "label": "Carbon Neutral"
+            "label": "Carbon Neutral",
+            "number": "1"
           }
-        ]
+        ],
+        "title": "Alpine Excellence by Numbers"
       },
+      "type": "stats-band",
       "settings": {}
     },
     {
       "id": "home-testimonials",
-      "type": "testimonials",
       "data": {
         "label": "Guest Reviews",
         "title": "What Our Guests Say",
         "testimonials": [
           {
             "id": "testimonial-1",
+            "role": "Travel Editor",
             "quote": "Lumina Alpine Retreat exceeded every expectation. The perfect blend of luxury, sustainability, and genuine Alpine hospitality. Our suite overlooked pristine peaks, and every meal was a culinary masterpiece.",
             "author": "Charlotte Dubois",
-            "role": "Travel Editor",
-            "location": "Paris, France",
-            "rating": 5
+            "rating": 5,
+            "location": "Paris, France"
           },
           {
             "id": "testimonial-2",
+            "role": "Executive",
             "quote": "The spa treatments here are transformative. The Alpine Stone Ritual combined with the mountain air created the most relaxing experience of my life. I left feeling completely rejuvenated.",
             "author": "Marcus Weber",
-            "role": "Executive",
-            "location": "Zurich, Switzerland",
-            "rating": 5
+            "rating": 5,
+            "location": "Zurich, Switzerland"
           },
           {
             "id": "testimonial-3",
+            "role": "Environmental Consultant",
             "quote": "As someone passionate about sustainable travel, I was impressed by their genuine commitment to environmental responsibility without compromising on luxury. The perfect eco-conscious getaway.",
             "author": "Isabella Rodriguez",
-            "role": "Environmental Consultant",
-            "location": "Barcelona, Spain",
-            "rating": 5
+            "rating": 5,
+            "location": "Barcelona, Spain"
           }
         ]
       },
+      "type": "testimonials",
       "settings": {}
     },
     {
       "id": "home-newsletter",
-      "type": "newsletter-cta",
       "data": {
-        "title": "Alpine Insider",
-        "description": "Subscribe to receive exclusive seasonal offers, insider updates, and first access to our curated Alpine experiences.",
-        "placeholder": "Enter your email address",
         "cta": {
           "id": "newsletter-cta",
-          "label": "Join the Community",
           "href": "#",
+          "label": "Join the Community",
           "variant": "primary"
-        }
+        },
+        "title": "Alpine Insider",
+        "description": "Subscribe to receive exclusive seasonal offers, insider updates, and first access to our curated Alpine experiences.",
+        "placeholder": "Enter your email address"
       },
+      "type": "newsletter-cta",
       "settings": {}
     }
   ]

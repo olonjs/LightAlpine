@@ -50,7 +50,7 @@
       "info": "#6C9CE0",
       "info-foreground": "#192620",
       "info-border": "#3A5C8F",
-      "glass-surface": "rgba(244, 247, 245, 0.10)",
+      "glass-surface": "rgba(244, 247, 245, 0.50)",
       "glass-border": "rgba(244, 247, 245, 0.20)"
     },
     "modes": {

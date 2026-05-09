@@ -1,8 +1,10 @@
 // Layout: Hero=A (SPLIT 60/40), Features=A (BENTO GRID)
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Check } from 'lucide-react';
+import { isInAppPathHref } from '@/lib/isInAppPathHref';
 import type { AccommodationShowcaseData, AccommodationShowcaseSettings } from './types';
 
 export const AccommodationShowcase: React.FC<{ data: AccommodationShowcaseData; settings: AccommodationShowcaseSettings }> = ({ data }) => (
@@ -73,7 +75,11 @@ export const AccommodationShowcase: React.FC<{ data: AccommodationShowcaseData; 
                   asChild
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-[var(--local-radius-md)] bg-[var(--local-primary)] text-[var(--local-primary-foreground)] font-semibold hover:opacity-90 transition-opacity"
                 >
-                  <a href={accommodation.cta.href}>{accommodation.cta.label}</a>
+                  {isInAppPathHref(accommodation.cta.href) ? (
+                    <Link to={accommodation.cta.href} viewTransition>{accommodation.cta.label}</Link>
+                  ) : (
+                    <a href={accommodation.cta.href}>{accommodation.cta.label}</a>
+                  )}
                 </Button>
               )}
             </div>

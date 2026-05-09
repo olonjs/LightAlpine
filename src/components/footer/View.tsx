@@ -1,7 +1,9 @@
 // Layout: Footer with brand column, contact info, and links
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Separator } from '@/components/ui/separator';
 import { Mail, MapPin, Phone } from 'lucide-react';
+import { isInAppPathHref } from '@/lib/isInAppPathHref';
 import type { FooterData, FooterSettings } from './types';
 
 export const Footer: React.FC<{ data: FooterData; settings: FooterSettings }> = ({ data }) => {
@@ -86,17 +88,21 @@ export const Footer: React.FC<{ data: FooterData; settings: FooterSettings }> = 
           <div>
             <h3 className="font-display font-bold text-[var(--local-text)] text-lg mb-6">Links</h3>
             <nav className="space-y-3">
-              {navItems.map((item, idx) => (
-                <a
-                  key={item.href + '-footer-' + idx}
-                  href={item.href}
-                  className="block text-[var(--local-text-muted)] text-sm hover:text-[var(--local-accent)] transition"
-                  data-jp-item-id={`footer-link-${idx}`}
-                  data-jp-item-field="menu"
-                >
-                  {item.label}
-                </a>
-              ))}
+              {navItems.map((item, idx) => {
+                const inApp = isInAppPathHref(item.href);
+                const cls = "block text-[var(--local-text-muted)] text-sm hover:text-[var(--local-accent)] transition";
+                const shared = {
+                  className: cls,
+                  'data-jp-item-id': `footer-link-${idx}`,
+                  'data-jp-item-field': 'menu' as const,
+                  children: item.label,
+                };
+                return inApp ? (
+                  <Link key={item.href + '-footer-' + idx} to={item.href} viewTransition {...shared} />
+                ) : (
+                  <a key={item.href + '-footer-' + idx} href={item.href} {...shared} />
+                );
+              })}
             </nav>
           </div>
         </div>

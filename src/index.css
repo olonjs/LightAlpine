@@ -182,3 +182,5 @@ html { scroll-behavior: auto; }
 [data-section-id]:hover [data-jp-section-overlay] > div,
 [data-section-id][data-jp-selected] [data-jp-section-overlay] > div { opacity: 1; }
 
+/* Page transitions — defined in index.html <style> to guarantee availability before JS hydration. */
+

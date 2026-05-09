@@ -1,8 +1,10 @@
 // Layout: Hero=F (MINIMAL HERO), Features=C (TIMELINE)
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Clock } from 'lucide-react';
+import { isInAppPathHref } from '@/lib/isInAppPathHref';
 import type { ExperienceTimelineData, ExperienceTimelineSettings } from './types';
 
 export const ExperienceTimeline: React.FC<{ data: ExperienceTimelineData; settings: ExperienceTimelineSettings }> = ({ data }) => {
@@ -100,7 +102,11 @@ export const ExperienceTimeline: React.FC<{ data: ExperienceTimelineData; settin
                         variant="outline"
                         className="rounded-[var(--local-radius-md)] border-[var(--local-border)] text-[var(--local-text)] hover:border-[var(--local-accent)] transition"
                       >
-                        <a href={experience.cta.href}>{experience.cta.label}</a>
+                        {isInAppPathHref(experience.cta.href) ? (
+                          <Link to={experience.cta.href} viewTransition>{experience.cta.label}</Link>
+                        ) : (
+                          <a href={experience.cta.href}>{experience.cta.label}</a>
+                        )}
                       </Button>
                     )}
                   </div>

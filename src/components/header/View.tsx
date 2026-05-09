@@ -201,7 +201,7 @@ function NavLinks() {
           ),
         };
         return inApp ? (
-          <Link key={item.id} to={item.href} {...shared} />
+          <Link key={item.id} to={item.href} viewTransition {...shared} />
         ) : (
           <a key={item.id} href={item.href} {...shared} />
         );
@@ -229,6 +229,7 @@ function NavActions() {
             <MotionLink
               key={action.id}
               to={action.href}
+              viewTransition
               className="inline-flex items-center rounded-full bg-[var(--local-text)] px-4 py-1.5 text-sm font-medium text-[var(--local-text-on-solid)] transition-opacity duration-200 hover:opacity-90"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
@@ -254,6 +255,7 @@ function NavActions() {
           <Link
             key={action.id}
             to={action.href}
+            viewTransition
             className="px-3 py-1.5 text-sm text-[var(--local-muted)] transition-colors duration-150 hover:text-[var(--local-text)]"
             data-jp-item-id={action.id}
             data-jp-item-field="actions"
@@ -376,7 +378,7 @@ function MobileMenu() {
                     ),
                   };
                   return inApp ? (
-                    <MotionLink key={item.id} to={item.href} {...motionProps} />
+                    <MotionLink key={item.id} to={item.href} viewTransition {...motionProps} />
                   ) : (
                     <motion.a key={item.id} href={item.href} {...motionProps} />
                   );
@@ -390,6 +392,7 @@ function MobileMenu() {
                     <Link
                       key={action.id}
                       to={action.href}
+                      viewTransition
                       className="rounded-full bg-[var(--local-text)] px-4 py-2.5 text-center text-sm font-medium text-[var(--local-text-on-solid)]"
                       onClick={onNav}
                       data-jp-item-id={action.id}
@@ -412,6 +415,7 @@ function MobileMenu() {
                     <Link
                       key={action.id}
                       to={action.href}
+                      viewTransition
                       className="px-4 py-2.5 text-sm text-[var(--local-muted)] transition-colors hover:text-[var(--local-text)]"
                       onClick={onNav}
                       data-jp-item-id={action.id}
@@ -473,7 +477,10 @@ export function Header({
       firstPathname.current = false;
       return;
     }
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    // Do NOT call window.scrollTo here: it runs inside document.startViewTransition's
+    // flushSync callback and disrupts the view-transition snapshot capture.
+    // Scroll restoration is handled by <ScrollRestoration> in JsonPagesEngine,
+    // which correctly coordinates with the View Transitions API.
     setIsScrolled(false);
     setRoutePaintLock(true);
     const id = window.requestAnimationFrame(() => setRoutePaintLock(false));
@@ -569,6 +576,7 @@ export function Header({
               <MotionLink
                 className="flex shrink-0 items-baseline gap-2"
                 to={logoHref}
+                viewTransition
                 variants={logoVariants}
                 data-jp-field="logoHref"
               >

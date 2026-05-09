@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { isInAppPathHref } from '@/lib/isInAppPathHref';
 import type { PageHeroData, PageHeroSettings } from './types';
 
 export const PageHero: React.FC<{ data: PageHeroData; settings: PageHeroSettings }> = ({ data }) => (
@@ -17,9 +19,15 @@ export const PageHero: React.FC<{ data: PageHeroData; settings: PageHeroSettings
         <nav className="flex items-center gap-2 text-sm text-[var(--local-text-muted)] mb-8">
           {data.breadcrumbs.map((crumb, idx) => (
             <React.Fragment key={crumb.id || `crumb-${idx}`}>
-              <a href={crumb.href} className="hover:text-[var(--local-accent)] transition">
-                {crumb.label}
-              </a>
+              {isInAppPathHref(crumb.href) ? (
+                <Link to={crumb.href} viewTransition className="hover:text-[var(--local-accent)] transition">
+                  {crumb.label}
+                </Link>
+              ) : (
+                <a href={crumb.href} className="hover:text-[var(--local-accent)] transition">
+                  {crumb.label}
+                </a>
+              )}
               {idx < (data.breadcrumbs?.length ?? 0) - 1 && <span>/</span>}
             </React.Fragment>
           ))}

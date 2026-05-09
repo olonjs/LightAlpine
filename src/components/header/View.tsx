@@ -581,12 +581,7 @@ export function Header({
                 data-jp-field="logoHref"
               >
                 <span
-                  className="font-display text-lg font-semibold tracking-tight text-[var(--local-text)] sm:text-xl"
-                  style={{
-                    fontFamily: '"Cormorant Garamond", Helvetica, Arial, sans-serif',
-                    fontWeight: 600,
-                    letterSpacing: '-0.04em',
-                  }}
+                  className="font-wordmark text-lg text-[var(--local-text)] sm:text-xl"
                   data-jp-field="logoText"
                 >
                   {data.logoText}
@@ -608,12 +603,7 @@ export function Header({
                 data-jp-field="logoHref"
               >
                 <span
-                  className="font-display text-lg font-semibold tracking-tight text-[var(--local-text)] sm:text-xl"
-                  style={{
-                    fontFamily: '"Cormorant Garamond", Helvetica, Arial, sans-serif',
-                    fontWeight: 600,
-                    letterSpacing: '-0.04em',
-                  }}
+                  className="font-wordmark text-lg text-[var(--local-text)] sm:text-xl"
                   data-jp-field="logoText"
                 >
                   {data.logoText}

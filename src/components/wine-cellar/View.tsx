@@ -5,14 +5,14 @@ import { Badge } from '@/components/ui/badge';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import type { WineCellarData, WineCellarSettings } from './types';
 
-export const WineCellar: React.FC<{ data: WineCellarData; settings: WineCellarSettings }> = ({ data }) => {
-  const wineTypeColors = {
-    red: 'text-red-400 bg-red-400/10 border-red-400/20',
-    white: 'text-yellow-400 bg-yellow-400/10 border-yellow-400/20',
-    sparkling: 'text-blue-400 bg-blue-400/10 border-blue-400/20',
-    dessert: 'text-purple-400 bg-purple-400/10 border-purple-400/20',
-  };
+const WINE_TYPE_CLASS: Record<string, string> = {
+  red: 'text-[var(--local-wine-red-text)] bg-[var(--local-wine-red-bg)] border-[var(--local-wine-red-border)]',
+  white: 'text-[var(--local-wine-white-text)] bg-[var(--local-wine-white-bg)] border-[var(--local-wine-white-border)]',
+  sparkling: 'text-[var(--local-wine-sparkling-text)] bg-[var(--local-wine-sparkling-bg)] border-[var(--local-wine-sparkling-border)]',
+  dessert: 'text-[var(--local-wine-dessert-text)] bg-[var(--local-wine-dessert-bg)] border-[var(--local-wine-dessert-border)]',
+};
 
+export const WineCellar: React.FC<{ data: WineCellarData; settings: WineCellarSettings }> = ({ data }) => {
   return (
     <section
       style={{
@@ -24,6 +24,18 @@ export const WineCellar: React.FC<{ data: WineCellarData; settings: WineCellarSe
         '--local-border': 'var(--border)',
         '--local-primary': 'var(--primary)',
         '--local-radius-lg': 'var(--theme-radius-lg)',
+        '--local-wine-red-bg':        'var(--semantic-wine-red-bg)',
+        '--local-wine-red-border':    'var(--semantic-wine-red-border)',
+        '--local-wine-red-text':      'var(--semantic-wine-red-text)',
+        '--local-wine-white-bg':      'var(--semantic-wine-white-bg)',
+        '--local-wine-white-border':  'var(--semantic-wine-white-border)',
+        '--local-wine-white-text':    'var(--semantic-wine-white-text)',
+        '--local-wine-sparkling-bg':     'var(--semantic-wine-sparkling-bg)',
+        '--local-wine-sparkling-border': 'var(--semantic-wine-sparkling-border)',
+        '--local-wine-sparkling-text':   'var(--semantic-wine-sparkling-text)',
+        '--local-wine-dessert-bg':    'var(--semantic-wine-dessert-bg)',
+        '--local-wine-dessert-border': 'var(--semantic-wine-dessert-border)',
+        '--local-wine-dessert-text':  'var(--semantic-wine-dessert-text)',
       } as React.CSSProperties}
       className="relative z-0 py-28 bg-[var(--local-bg)]"
     >
@@ -75,7 +87,7 @@ export const WineCellar: React.FC<{ data: WineCellarData; settings: WineCellarSe
                       {wine.name}
                     </h3>
                     {wine.type && (
-                      <Badge className={`text-xs ${wineTypeColors[wine.type] || 'text-[var(--local-accent)] bg-[var(--local-accent)]/10 border-[var(--local-accent)]/20'}`}>
+                      <Badge className={`text-xs ${WINE_TYPE_CLASS[wine.type] || 'text-[var(--local-accent)] bg-[var(--local-accent)]/10 border-[var(--local-accent)]/20'}`}>
                         {wine.type}
                       </Badge>
                     )}

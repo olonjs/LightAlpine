@@ -7,14 +7,14 @@ import { Clock } from 'lucide-react';
 import { isInAppPathHref } from '@/lib/isInAppPathHref';
 import type { ExperienceTimelineData, ExperienceTimelineSettings } from './types';
 
-export const ExperienceTimeline: React.FC<{ data: ExperienceTimelineData; settings: ExperienceTimelineSettings }> = ({ data }) => {
-  const difficultyColors = {
-    'Easy': 'text-green-400 bg-green-400/10 border-green-400/20',
-    'Moderate': 'text-yellow-400 bg-yellow-400/10 border-yellow-400/20',
-    'Challenging': 'text-orange-400 bg-orange-400/10 border-orange-400/20',
-    'Expert': 'text-red-400 bg-red-400/10 border-red-400/20',
-  };
+const DIFFICULTY_CLASS: Record<string, string> = {
+  Easy: 'text-[var(--local-difficulty-easy-text)] bg-[var(--local-difficulty-easy-bg)] border-[var(--local-difficulty-easy-border)]',
+  Moderate: 'text-[var(--local-difficulty-moderate-text)] bg-[var(--local-difficulty-moderate-bg)] border-[var(--local-difficulty-moderate-border)]',
+  Challenging: 'text-[var(--local-difficulty-challenging-text)] bg-[var(--local-difficulty-challenging-bg)] border-[var(--local-difficulty-challenging-border)]',
+  Expert: 'text-[var(--local-difficulty-expert-text)] bg-[var(--local-difficulty-expert-bg)] border-[var(--local-difficulty-expert-border)]',
+};
 
+export const ExperienceTimeline: React.FC<{ data: ExperienceTimelineData; settings: ExperienceTimelineSettings }> = ({ data }) => {
   return (
     <section
       style={{
@@ -28,6 +28,18 @@ export const ExperienceTimeline: React.FC<{ data: ExperienceTimelineData; settin
         '--local-primary-foreground': 'var(--primary-foreground)',
         '--local-radius-lg': 'var(--theme-radius-lg)',
         '--local-radius-md': 'var(--theme-radius-md)',
+        '--local-difficulty-easy-bg':        'var(--semantic-difficulty-easy-bg)',
+        '--local-difficulty-easy-border':    'var(--semantic-difficulty-easy-border)',
+        '--local-difficulty-easy-text':      'var(--semantic-difficulty-easy-text)',
+        '--local-difficulty-moderate-bg':    'var(--semantic-difficulty-moderate-bg)',
+        '--local-difficulty-moderate-border': 'var(--semantic-difficulty-moderate-border)',
+        '--local-difficulty-moderate-text':  'var(--semantic-difficulty-moderate-text)',
+        '--local-difficulty-challenging-bg':    'var(--semantic-difficulty-challenging-bg)',
+        '--local-difficulty-challenging-border': 'var(--semantic-difficulty-challenging-border)',
+        '--local-difficulty-challenging-text':  'var(--semantic-difficulty-challenging-text)',
+        '--local-difficulty-expert-bg':    'var(--semantic-difficulty-expert-bg)',
+        '--local-difficulty-expert-border': 'var(--semantic-difficulty-expert-border)',
+        '--local-difficulty-expert-text':  'var(--semantic-difficulty-expert-text)',
       } as React.CSSProperties}
       className="relative z-0 py-28 bg-[var(--local-bg)]"
     >
@@ -75,7 +87,7 @@ export const ExperienceTimeline: React.FC<{ data: ExperienceTimelineData; settin
                         </Badge>
                       )}
                       {experience.difficulty && (
-                        <Badge className={`text-xs ${difficultyColors[experience.difficulty]}`}>
+                        <Badge className={`text-xs ${DIFFICULTY_CLASS[experience.difficulty] ?? ''}`}>
                           {experience.difficulty}
                         </Badge>
                       )}

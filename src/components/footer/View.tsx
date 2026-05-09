@@ -27,12 +27,7 @@ export const Footer: React.FC<{ data: FooterData; settings: FooterSettings }> = 
           <div className="lg:col-span-2">
             <div className="flex items-baseline gap-2 mb-4">
               <h3
-                className="font-display text-2xl font-black tracking-tight text-[var(--local-text)]"
-                style={{
-                  fontFamily: '"Cormorant Garamond", Helvetica, Arial, sans-serif',
-                  fontWeight: '600',
-                  letterSpacing: '-0.04em'
-                }}
+                className="font-wordmark text-2xl text-[var(--local-text)]"
                 data-jp-field="brandText"
               >
                 {data.brandText}

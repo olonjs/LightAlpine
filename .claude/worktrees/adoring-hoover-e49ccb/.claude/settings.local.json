@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:olon.js.org)",
+      "Bash(ls /home/dev/npm-jpcore/packages/core/src/ 2>/dev/null | head -30)",
+      "Bash(ls /home/dev/npm-jpcore/packages/core/src/ 2>&1 | head -30; echo \"---\"; find /home/dev/npm-jpcore -maxdepth 3 -name \"theme*\" -type f 2>/dev/null | head -10)",
+      "Bash(npm run *)",
+      "Bash(ls \"//wsl.localhost/ubuntu/home/dev/temp/LightAlpine/.claude/worktrees/adoring-hoover-e49ccb\" 2>&1 | head -10)",
+      "PowerShell(npm run build 2>&1)",
+      "Bash(cd \"//wsl.localhost/ubuntu/home/dev/temp/LightAlpine/.claude/worktrees/adoring-hoover-e49ccb\" && pwd && npm run build 2>&1 | tail -80)",
+      "Bash(git add *)",
+      "Bash(git -C \"//wsl.localhost/ubuntu/home/dev/temp/LightAlpine\" status --short)",
+      "Bash(git -C \"//wsl.localhost/ubuntu/home/dev/temp/LightAlpine\" merge --ff-only claude/adoring-hoover-e49ccb)",
+      "Bash(git -C \"//wsl.localhost/ubuntu/home/dev/temp/LightAlpine\" diff HEAD -- src/index.css)",
+      "Bash(git -C \"//wsl.localhost/ubuntu/home/dev/temp/LightAlpine\" diff HEAD -- src/components/footer/View.tsx)",
+      "Bash(git -C \"//wsl.localhost/ubuntu/home/dev/temp/LightAlpine\" diff HEAD -- src/components/header/View.tsx)",
+      "Bash(git -C \"//wsl.localhost/ubuntu/home/dev/temp/LightAlpine\" diff HEAD -- src/components/experience-timeline/View.tsx)",
+      "Bash(git -C \"//wsl.localhost/ubuntu/home/dev/temp/LightAlpine\" log --oneline -5)",
+      "Bash(git -C \"//wsl.localhost/ubuntu/home/dev/temp/LightAlpine\" diff --check src/index.css)",
+      "Bash(git -C \"//wsl.localhost/ubuntu/home/dev/temp/LightAlpine\" add src/index.css)",
+      "Bash(git -C \"//wsl.localhost/ubuntu/home/dev/temp/LightAlpine\" commit --no-edit)",
+      "Read(///wsl.localhost/ubuntu/home/dev/temp/LightAlpine/.git/**)",
+      "Bash(git -C \"//wsl.localhost/ubuntu/home/dev/temp/LightAlpine\" log --oneline --graph -5)",
+      "Bash(git -C \"//wsl.localhost/ubuntu/home/dev/temp/LightAlpine\" show --stat c111c64)",
+      "Bash(grep -E \"createBrowserRouter|BrowserRouter|RouterProvider|<Routes|HashRouter|MemoryRouter\" \"//wsl.localhost/ubuntu/home/dev/temp/LightAlpine/src/App.tsx\" \"//wsl.localhost/ubuntu/home/dev/temp/LightAlpine/src/entry-ssg.tsx\" 2>&1 | head -30)",
+      "Bash(grep -rE \"createBrowserRouter|BrowserRouter|RouterProvider\" \"//wsl.localhost/ubuntu/home/dev/temp/LightAlpine/node_modules/@olonjs/core/dist/\" 2>/dev/null | head -10; echo \"---\"; grep -rE \"react-router-dom\" \"//wsl.localhost/ubuntu/home/dev/temp/LightAlpine/package.json\" | head -5)",
+      "Bash(grep -nE \"Outlet|Routes|Route |children|JsonPagesEngine\" \"//wsl.localhost/ubuntu/home/dev/temp/LightAlpine/node_modules/@olonjs/core/dist/olonjs-core.js\" 2>/dev/null | head -40)",
+      "Bash(ls \"//wsl.localhost/ubuntu/home/dev/npm-jpcore/\" 2>&1 | head -20)",
+      "Bash(ls \"//wsl.localhost/ubuntu/home/dev/npm-jpcore/docs/\" 2>&1)",
+      "Bash(ls \"//wsl.localhost/ubuntu/home/dev/npm-jpcore/docs/decisions/\" 2>&1 | head -10; echo \"---\"; ls \"//wsl.localhost/ubuntu/home/dev/npm-jpcore/docs/ideas/\" 2>&1 | head -10; echo \"---\"; ls \"//wsl.localhost/ubuntu/home/dev/npm-jpcore/docs/plans/\" 2>&1 | head -10)",
+      "Bash(git -C \"//wsl.localhost/ubuntu/home/dev/npm-jpcore\" status --short)",
+      "Bash(git -C \"//wsl.localhost/ubuntu/home/dev/npm-jpcore\" branch --show-current)",
+      "Bash(git -C \"//wsl.localhost/ubuntu/home/dev/npm-jpcore\" log --oneline -5)",
+      "Bash(git -C \"//wsl.localhost/ubuntu/home/dev/npm-jpcore\" add docs/proposals/core-presentation-sovereignty.md)",
+      "PowerShell(wsl -d Ubuntu -- bash -c \"cd /home/dev/npm-jpcore && BODY=$\\(cat .pr-body.tmp.md | jq -Rs .\\) && gh api repos/olonjs/core/pulls/1 -X PATCH -f body=\\\\\"$\\(cat .pr-body.tmp.md\\)\\\\\" --jq '.html_url' 2>&1 | tail -5\")"
+    ]
+  }
+}

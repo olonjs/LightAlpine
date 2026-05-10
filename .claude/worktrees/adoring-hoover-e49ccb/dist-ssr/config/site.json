@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "global-header",
+    "type": "header",
+    "data": {
+      "logoText": "Lumina Alpine Retreat",
+      "logoHighlight": "",
+      "announcement": "Winter Season 2024: Book Early & Save 20%",
+      "menu": { "$ref": "../config/menu.json#/main" }
+    },
+    "settings": { "sticky": true }
+  },
+  "footer": {
+    "id": "global-footer",
+    "type": "footer",
+    "data": {
+      "brandText": "Lumina Alpine Retreat",
+      "brandHighlight": "Est. 2018",
+      "tagline": "Where luxury meets nature in the heart of the Dolomites.",
+      "address": "Via Alta Quota 47\n39046 Ortisei, South Tyrol\nItaly",
+      "phone": "+39 0471 123 456",
+      "email": "concierge@luminaalpine.com",
+      "copyright": "© 2024 Lumina Alpine Retreat. All rights reserved.",
+      "menu": { "$ref": "../config/menu.json#/footer" }
+    },
+    "settings": { "showLogo": true }
+  },
+  "identity": { "title": "Lumina Alpine Retreat - Luxury Eco-Resort in the Dolomites" },
+  "pages": []
+}
+

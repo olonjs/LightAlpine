@@ -1,0 +1,265 @@
+{
+  "name": "Lumina Alpine Retreat - Airy Edition",
+  "version": "1.1.0",
+  "tokens": {
+    "colors": {
+      "background": "#192620",
+      "foreground": "#F4F7F5",
+      "card": "#22332B",
+      "card-foreground": "#F4F7F5",
+      "elevated": "#2A3D34",
+      "overlay": "#101A15",
+      "popover": "#22332B",
+      "popover-foreground": "#F4F7F5",
+      "muted": "#2F453A",
+      "muted-foreground": "#92B2A1",
+      "placeholder": "#769E89",
+      "primary": "#769E89",
+      "primary-foreground": "#192620",
+      "primary-light": "#92B2A1",
+      "primary-dark": "#5C826F",
+      "primary-50": "#F4F7F5",
+      "primary-100": "#E4ECE7",
+      "primary-200": "#C9D9D0",
+      "primary-300": "#ADC5B8",
+      "primary-400": "#92B2A1",
+      "primary-500": "#769E89",
+      "primary-600": "#5C826F",
+      "primary-700": "#466354",
+      "primary-800": "#2F453A",
+      "primary-900": "#192620",
+      "accent": "#D9B382",
+      "accent-foreground": "#192620",
+      "secondary": "#2F453A",
+      "secondary-foreground": "#F4F7F5",
+      "border": "#2F453A",
+      "border-strong": "#466354",
+      "input": "#2F453A",
+      "ring": "#769E89",
+      "destructive": "#E06C6C",
+      "destructive-foreground": "#FFFFFF",
+      "destructive-border": "#8F3A3A",
+      "destructive-ring": "#E06C6C",
+      "success": "#6DBA82",
+      "success-foreground": "#192620",
+      "success-border": "#3A7A4D",
+      "success-indicator": "#6DBA82",
+      "warning": "#E0B86C",
+      "warning-foreground": "#192620",
+      "warning-border": "#8F703A",
+      "info": "#6C9CE0",
+      "info-foreground": "#192620",
+      "info-border": "#3A5C8F",
+      "glass-surface": "rgba(244, 247, 245, 0.50)",
+      "glass-border": "rgba(244, 247, 245, 0.20)"
+    },
+    "modes": {
+      "light": {
+        "colors": {
+          "background": "#FAFCFB",
+          "foreground": "#192620",
+          "card": "#FFFFFF",
+          "card-foreground": "#192620",
+          "elevated": "#F4F7F5",
+          "overlay": "#E4ECE7",
+          "popover": "#FFFFFF",
+          "popover-foreground": "#192620",
+          "muted": "#E4ECE7",
+          "muted-foreground": "#5C826F",
+          "placeholder": "#92B2A1",
+          "primary": "#466354",
+          "primary-foreground": "#FFFFFF",
+          "primary-light": "#5C826F",
+          "primary-dark": "#2F453A",
+          "accent": "#C29B62",
+          "accent-foreground": "#FFFFFF",
+          "secondary": "#E4ECE7",
+          "secondary-foreground": "#192620",
+          "border": "#C9D9D0",
+          "border-strong": "#ADC5B8",
+          "input": "#C9D9D0",
+          "ring": "#466354",
+          "destructive": "#DC2626",
+          "destructive-foreground": "#FFFFFF",
+          "destructive-border": "#F87171",
+          "destructive-ring": "#EF4444",
+          "success": "#16A34A",
+          "success-foreground": "#FFFFFF",
+          "success-border": "#86EFAC",
+          "success-indicator": "#22C55E",
+          "warning": "#D97706",
+          "warning-foreground": "#FFFFFF",
+          "warning-border": "#FCD34D",
+          "info": "#2563EB",
+          "info-foreground": "#FFFFFF",
+          "info-border": "#93C5FD",
+          "glass-surface": "rgba(25, 38, 32, 0.08)",
+          "glass-border": "rgba(25, 38, 32, 0.18)"
+        },
+        "semantic": {
+          "difficulty": {
+            "easy-bg": "rgba(22, 163, 74, 0.10)",
+            "easy-border": "rgba(22, 163, 74, 0.25)",
+            "easy-text": "#15803D",
+            "moderate-bg": "rgba(217, 119, 6, 0.10)",
+            "moderate-border": "rgba(217, 119, 6, 0.25)",
+            "moderate-text": "#B45309",
+            "challenging-bg": "rgba(234, 88, 12, 0.10)",
+            "challenging-border": "rgba(234, 88, 12, 0.25)",
+            "challenging-text": "#9A3412",
+            "expert-bg": "rgba(220, 38, 38, 0.10)",
+            "expert-border": "rgba(220, 38, 38, 0.25)",
+            "expert-text": "#991B1B"
+          },
+          "wine": {
+            "red-bg": "rgba(159, 18, 57, 0.10)",
+            "red-border": "rgba(159, 18, 57, 0.25)",
+            "red-text": "#9F1239",
+            "white-bg": "rgba(180, 138, 26, 0.10)",
+            "white-border": "rgba(180, 138, 26, 0.25)",
+            "white-text": "#854D0E",
+            "sparkling-bg": "rgba(7, 89, 133, 0.10)",
+            "sparkling-border": "rgba(7, 89, 133, 0.25)",
+            "sparkling-text": "#075985",
+            "dessert-bg": "rgba(126, 34, 206, 0.10)",
+            "dessert-border": "rgba(126, 34, 206, 0.25)",
+            "dessert-text": "#6B21A8"
+          },
+          "overlay": {
+            "text-on-image": "#FFFFFF",
+            "text-on-image-muted": "rgba(255, 255, 255, 0.80)"
+          }
+        }
+      }
+    },
+    "semantic": {
+      "difficulty": {
+        "easy-bg": "rgba(109, 186, 130, 0.10)",
+        "easy-border": "rgba(109, 186, 130, 0.20)",
+        "easy-text": "#6DBA82",
+        "moderate-bg": "rgba(224, 184, 108, 0.10)",
+        "moderate-border": "rgba(224, 184, 108, 0.20)",
+        "moderate-text": "#E0B86C",
+        "challenging-bg": "rgba(217, 138, 89, 0.10)",
+        "challenging-border": "rgba(217, 138, 89, 0.20)",
+        "challenging-text": "#D98A59",
+        "expert-bg": "rgba(224, 108, 108, 0.10)",
+        "expert-border": "rgba(224, 108, 108, 0.20)",
+        "expert-text": "#E06C6C"
+      },
+      "wine": {
+        "red-bg": "rgba(209, 122, 138, 0.10)",
+        "red-border": "rgba(209, 122, 138, 0.22)",
+        "red-text": "#D17A8A",
+        "white-bg": "rgba(232, 200, 130, 0.10)",
+        "white-border": "rgba(232, 200, 130, 0.22)",
+        "white-text": "#E8C882",
+        "sparkling-bg": "rgba(150, 200, 220, 0.10)",
+        "sparkling-border": "rgba(150, 200, 220, 0.22)",
+        "sparkling-text": "#96C8DC",
+        "dessert-bg": "rgba(180, 130, 200, 0.10)",
+        "dessert-border": "rgba(180, 130, 200, 0.22)",
+        "dessert-text": "#B482C8"
+      },
+      "overlay": {
+        "text-on-image": "#FFFFFF",
+        "text-on-image-muted": "rgba(255, 255, 255, 0.80)"
+      }
+    },
+    "typography": {
+      "fontFamily": {
+        "primary": "\"Source Serif 4\", Helvetica, Arial, sans-serif",
+        "mono": "\"IBM Plex Mono\", Helvetica, Arial, sans-serif",
+        "display": "\"Cormorant Garamond\", Helvetica, Arial, sans-serif"
+      },
+      "wordmark": {
+        "fontFamily": "\"Cormorant Garamond\", Helvetica, Arial, sans-serif",
+        "weight": "600",
+        "tracking": "-0.04em"
+      },
+      "scale": {
+        "xs": "0.75rem",
+        "sm": "0.875rem",
+        "base": "1rem",
+        "lg": "1.125rem",
+        "xl": "1.25rem",
+        "2xl": "1.5rem",
+        "3xl": "1.875rem",
+        "4xl": "2.25rem",
+        "5xl": "3rem"
+      },
+      "tracking": {
+        "tight": "-0.02em",
+        "normal": "0em",
+        "wide": "0.04em",
+        "widest": "0.14em",
+        "overlay-label": "0.1em"
+      },
+      "leading": {
+        "tight": "1.2",
+        "normal": "1.5",
+        "relaxed": "1.7"
+      }
+    },
+    "borderRadius": {
+      "sm": "0.25rem",
+      "md": "0.5rem",
+      "lg": "0.75rem",
+      "xl": "1.25rem",
+      "full": "9999px"
+    },
+    "spacing": {
+      "container-max": "80rem",
+      "section-y": "6rem",
+      "header-h": "5rem",
+      "overlay-label-x": "0.55rem",
+      "overlay-label-y": "0.2rem"
+    },
+    "zIndex": {
+      "base": "0",
+      "elevated": "10",
+      "dropdown": "20",
+      "sticky": "40",
+      "overlay": "50",
+      "modal": "60",
+      "toast": "100",
+      "overlay-stage": "9999"
+    },
+    "borders": {
+      "width": {
+        "none": "0",
+        "thin": "1px",
+        "base": "2px",
+        "thick": "4px"
+      },
+      "style": {
+        "solid": "solid",
+        "dashed": "dashed",
+        "dotted": "dotted"
+      }
+    },
+    "animation": {
+      "duration": {
+        "instant": "0s",
+        "fast": "0.15s",
+        "normal": "0.3s",
+        "slow": "0.7s",
+        "slower": "2s"
+      },
+      "easing": {
+        "linear": "linear",
+        "in": "cubic-bezier(0.4, 0, 1, 1)",
+        "out": "ease",
+        "inOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "bounce": "cubic-bezier(0.68, -0.55, 0.265, 1.55)"
+      },
+      "delay": {
+        "none": "0s",
+        "xs": "0.1s",
+        "sm": "0.2s",
+        "md": "0.3s",
+        "lg": "0.4s"
+      }
+    }
+  }
+}

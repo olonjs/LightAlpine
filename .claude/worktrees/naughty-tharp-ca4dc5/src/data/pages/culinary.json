@@ -1,0 +1,121 @@
+{
+  "id": "culinary-page",
+  "meta": {
+    "title": "Culinary Excellence - Lumina Alpine Retreat",
+    "description": "Savor exceptional Michelin-starred cuisine featuring locally-sourced Alpine ingredients, artisanal preparations, and an award-winning wine cellar."
+  },
+  "slug": "culinary",
+  "sections": [
+    {
+      "id": "culinary-hero",
+      "data": {
+        "title": "Culinary Excellence",
+        "breadcrumbs": [
+          {
+            "id": "breadcrumb-home",
+            "href": "/",
+            "label": "Home"
+          },
+          {
+            "id": "breadcrumb-culinary",
+            "href": "/culinary",
+            "label": "Culinary"
+          }
+        ],
+        "description": "Our Michelin-starred kitchen celebrates the rich culinary heritage of the Alps through innovative techniques and the finest local ingredients."
+      },
+      "type": "page-hero",
+      "settings": {}
+    },
+    {
+      "id": "culinary-showcase",
+      "data": {
+        "items": [
+          {
+            "id": "restaurant-alta",
+            "badge": "2 Michelin Stars",
+            "image": {
+              "alt": "Elegant fine dining restaurant with mountain view windows and artisanal place settings",
+              "url": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=85"
+            },
+            "title": "Alta Restaurant",
+            "description": "Our flagship fine-dining restaurant offers a seven-course tasting menu that changes with the seasons. Each dish tells a story of the Dolomites through flavors, textures, and presentations inspired by the mountain landscape."
+          },
+          {
+            "id": "lounge-summit",
+            "badge": "Rooftop Dining",
+            "image": {
+              "alt": "Rooftop lounge with comfortable seating, mountain views, and artisanal cocktail service",
+              "url": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=85"
+            },
+            "title": "Summit Lounge",
+            "description": "Casual dining with panoramic views featuring locally-inspired small plates, artisanal cheeses, and craft cocktails made with Alpine botanicals. Perfect for après-ski or sunset dining."
+          },
+          {
+            "id": "wine-cellar",
+            "badge": "800+ Wines",
+            "image": {
+              "alt": "Elegant wine cellar with stone walls, professional lighting, and extensive wine collection",
+              "url": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&q=85"
+            },
+            "title": "Private Wine Cellar",
+            "description": "Over 800 carefully selected wines from Alpine regions and renowned international vineyards. Enjoy private tastings with our sommelier in our temperature-controlled cellar carved into the mountain."
+          }
+        ],
+        "label": "Dining Experiences",
+        "title": "Alpine Gastronomy Redefined",
+        "description": "Executive Chef Marco Steinbacher brings two Michelin stars to our mountain retreat, crafting menus that honor local traditions while pushing culinary boundaries."
+      },
+      "type": "culinary-showcase",
+      "settings": {}
+    },
+    {
+      "id": "wine-cellar-detail",
+      "data": {
+        "image": {
+          "alt": "Sommelier carefully selecting wine bottles in professional cellar environment",
+          "url": "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=600&q=85"
+        },
+        "label": "Wine Collection",
+        "title": "Curated Alpine Wines",
+        "wines": [
+          {
+            "id": "wine-gewurztraminer",
+            "name": "Gewürztraminer Gran Cuvée",
+            "type": "white",
+            "region": "Alto Adige",
+            "vintage": "2019",
+            "description": "Aromatic and complex white wine with notes of rose petals, lychee, and spice. Perfect pairing with our Alpine cheese selection."
+          },
+          {
+            "id": "wine-lagrein",
+            "name": "Lagrein Riserva",
+            "type": "red",
+            "region": "South Tyrol",
+            "vintage": "2017",
+            "description": "Full-bodied indigenous red with dark fruit flavors and hints of chocolate. Ideal companion to our house-cured speck and game dishes."
+          },
+          {
+            "id": "wine-franciacorta",
+            "name": "Franciacorta Brut",
+            "type": "sparkling",
+            "region": "Lombardy",
+            "vintage": "2018",
+            "description": "Elegant Italian sparkling wine with fine perlage and crisp minerality. Our sommelier's choice for celebrations and aperitifs."
+          },
+          {
+            "id": "wine-dessert",
+            "name": "Moscato Rosa Passito",
+            "type": "dessert",
+            "region": "Trentino",
+            "vintage": "2016",
+            "description": "Rare dessert wine with intense floral aromatics and honeyed sweetness. The perfect conclusion to our tasting menu."
+          }
+        ],
+        "description": "Discover exceptional wines from the unique terroir of Alpine regions, personally selected by our head sommelier from small family producers."
+      },
+      "type": "wine-cellar",
+      "settings": {}
+    }
+  ]
+}

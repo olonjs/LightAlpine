@@ -1,0 +1,42 @@
+{
+  "main": [
+    { 
+      "label": "Why",
+      "href": "/why",
+      "children": [
+        {
+          "label": "Overview",
+          "href": "/platform/overview"
+        },
+        {
+          "label": "Architecture",
+          "href": "/platform/architecture"
+        },
+        {
+          "label": "Security",
+          "href": "/platform/security"
+        },
+        {
+          "label": "Integrations",
+          "href": "/platform/integrations"
+        },
+        {
+          "label": "Roadmap",
+          "href": "/platform/roadmap"
+        }
+      ]
+    },
+    {
+      "label": "Solutions",
+      "href": "/solutions"
+    },
+    {
+      "label": "Pricing",
+      "href": "/pricing"
+    },
+    {
+      "label": "Resources",
+      "href": "/resources"
+    }
+  ]
+}

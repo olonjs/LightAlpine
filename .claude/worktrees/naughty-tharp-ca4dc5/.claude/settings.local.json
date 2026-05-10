@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(claude mcp *)",
+      "PowerShell(claude mcp add --transport stdio shopify-dev-mcp -- npx -y '@shopify/dev-mcp@latest')",
+      "Bash(npm root *)",
+      "Read(//c/Users/gseri/**)",
+      "Bash(\"/c/Users/gseri/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/b5ca12ee-0023-447d-8929-df3483f0eb9f/335b7d99-8725-4cd6-9d30-7db7d39baa8f/bin/claude.exe\" --version)"
+    ]
+  }
+}

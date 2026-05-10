@@ -1,0 +1,115 @@
+{
+  "id": "experiences-page",
+  "meta": {
+    "title": "Alpine Experiences - Lumina Alpine Retreat",
+    "description": "Discover curated outdoor adventures in the Dolomites: world-class skiing, guided hiking, helicopter tours, and exclusive mountain experiences."
+  },
+  "slug": "experiences",
+  "sections": [
+    {
+      "id": "experiences-hero",
+      "data": {
+        "title": "Alpine Adventures",
+        "breadcrumbs": [
+          {
+            "id": "breadcrumb-home",
+            "href": "/",
+            "label": "Home"
+          },
+          {
+            "id": "breadcrumb-experiences",
+            "href": "/experiences",
+            "label": "Experiences"
+          }
+        ],
+        "description": "Explore the breathtaking Dolomites through carefully curated experiences designed to showcase the natural beauty and cultural richness of this UNESCO World Heritage region."
+      },
+      "type": "page-hero",
+      "settings": {}
+    },
+    {
+      "id": "experience-timeline",
+      "data": {
+        "label": "Seasonal Adventures",
+        "title": "Year-Round Alpine Experiences",
+        "description": "From world-class skiing in winter to high-altitude hiking in summer, discover the Dolomites through immersive adventures tailored to every season.",
+        "experiences": [
+          {
+            "id": "exp-skiing",
+            "cta": {
+              "id": "ski-cta",
+              "href": "/book-experience?type=skiing",
+              "label": "Book Ski Guide",
+              "variant": "secondary"
+            },
+            "image": {
+              "alt": "Skiers carving through fresh powder snow with dramatic Dolomites peaks towering in background",
+              "url": "https://images.unsplash.com/photo-1551524164-6ca4ac833fb5?w=600&q=85"
+            },
+            "title": "Elite Ski Experience",
+            "season": "Winter",
+            "duration": "Full Day",
+            "difficulty": "Moderate",
+            "description": "Enjoy exclusive access to pristine slopes with our private ski guide. Experience includes equipment rental, lift tickets, and lunch at a mountain hut with panoramic views. Perfect for intermediate to advanced skiers looking to explore hidden corners of the Dolomiti Superski area."
+          },
+          {
+            "id": "exp-helicopter",
+            "cta": {
+              "id": "heli-cta",
+              "href": "/book-experience?type=helicopter",
+              "label": "Reserve Flight",
+              "variant": "secondary"
+            },
+            "image": {
+              "alt": "Luxury helicopter flying past dramatic Dolomites peaks with passengers enjoying panoramic mountain views",
+              "url": "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=600&q=85"
+            },
+            "title": "Helicopter Mountain Tour",
+            "season": "All Year",
+            "duration": "2 Hours",
+            "difficulty": "Easy",
+            "description": "Soar above the dramatic peaks and valleys of the Dolomites in our private helicopter. This exclusive aerial tour offers unparalleled photo opportunities and access to remote mountain landing sites for champagne service at 3,000 meters altitude."
+          },
+          {
+            "id": "exp-hiking",
+            "cta": {
+              "id": "ferrata-cta",
+              "href": "/book-experience?type=ferrata",
+              "label": "Join Adventure",
+              "variant": "secondary"
+            },
+            "image": {
+              "alt": "Climbers on via ferrata route with safety cables against vertical Dolomites rock face",
+              "url": "https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&q=85"
+            },
+            "title": "Via Ferrata Adventure",
+            "season": "Summer",
+            "duration": "6 Hours",
+            "difficulty": "Challenging",
+            "description": "Tackle the famous iron routes of the Dolomites with professional mountain guides. This thrilling climbing experience combines hiking, rock climbing, and breathtaking exposure on historic WWI routes with modern safety equipment."
+          },
+          {
+            "id": "exp-wellness",
+            "cta": {
+              "id": "forest-cta",
+              "href": "/book-experience?type=forest",
+              "label": "Book Session",
+              "variant": "secondary"
+            },
+            "image": {
+              "alt": "Peaceful forest meditation scene with dappled sunlight filtering through alpine trees",
+              "url": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=85"
+            },
+            "title": "Forest Bathing & Meditation",
+            "season": "Spring/Summer",
+            "duration": "3 Hours",
+            "difficulty": "Easy",
+            "description": "Reconnect with nature through the Japanese practice of Shinrin-yoku adapted for Alpine forests. Led by certified forest therapy guides, this mindful experience includes meditation, breathing exercises, and sensory awareness practices among ancient larch and pine groves."
+          }
+        ]
+      },
+      "type": "experience-timeline",
+      "settings": {}
+    }
+  ]
+}

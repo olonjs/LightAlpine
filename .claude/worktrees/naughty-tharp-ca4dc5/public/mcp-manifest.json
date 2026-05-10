@@ -1,0 +1,78 @@
+{
+  "version": "1.0.0",
+  "kind": "olonjs-mcp-manifest-index",
+  "generatedAt": "2026-05-03T18:07:45.418Z",
+  "pages": [
+    {
+      "slug": "accommodations",
+      "title": "Luxury Accommodations - Lumina Alpine Retreat",
+      "description": "Discover our collection of luxury suites featuring panoramic Dolomites views, premium amenities, and sustainable design in the heart of the Italian Alps.",
+      "manifestHref": "/mcp-manifests/accommodations.json",
+      "contractHref": "/schemas/accommodations.schema.json",
+      "sectionTypes": [
+        "header",
+        "footer",
+        "page-hero",
+        "accommodation-showcase",
+        "newsletter-cta"
+      ]
+    },
+    {
+      "slug": "culinary",
+      "title": "Culinary Excellence - Lumina Alpine Retreat",
+      "description": "Savor exceptional Michelin-starred cuisine featuring locally-sourced Alpine ingredients, artisanal preparations, and an award-winning wine cellar.",
+      "manifestHref": "/mcp-manifests/culinary.json",
+      "contractHref": "/schemas/culinary.schema.json",
+      "sectionTypes": [
+        "header",
+        "footer",
+        "page-hero",
+        "culinary-showcase",
+        "wine-cellar"
+      ]
+    },
+    {
+      "slug": "experiences",
+      "title": "Alpine Experiences - Lumina Alpine Retreat",
+      "description": "Discover curated outdoor adventures in the Dolomites: world-class skiing, guided hiking, helicopter tours, and exclusive mountain experiences.",
+      "manifestHref": "/mcp-manifests/experiences.json",
+      "contractHref": "/schemas/experiences.schema.json",
+      "sectionTypes": [
+        "header",
+        "footer",
+        "page-hero",
+        "experience-timeline"
+      ]
+    },
+    {
+      "slug": "home",
+      "title": "Lumina Alpine Retreat - Luxury Eco-Resort in the Dolomites",
+      "description": "Experience unparalleled luxury in the heart of the Italian Dolomites. Premium eco-resort featuring world-class spa, Michelin-starred dining, and exclusive alpine adventures.",
+      "manifestHref": "/mcp-manifests/home.json",
+      "contractHref": "/schemas/home.schema.json",
+      "sectionTypes": [
+        "header",
+        "footer",
+        "alpine-hero",
+        "resort-highlights",
+        "stats-band",
+        "testimonials",
+        "newsletter-cta"
+      ]
+    },
+    {
+      "slug": "wellness",
+      "title": "Wellness & Spa - Lumina Alpine Retreat",
+      "description": "Rejuvenate your body and soul with our award-winning spa treatments, thermal pools, and wellness programs inspired by Alpine traditions.",
+      "manifestHref": "/mcp-manifests/wellness.json",
+      "contractHref": "/schemas/wellness.schema.json",
+      "sectionTypes": [
+        "header",
+        "footer",
+        "page-hero",
+        "spa-treatments",
+        "resort-highlights"
+      ]
+    }
+  ]
+}

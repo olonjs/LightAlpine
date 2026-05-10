@@ -1,0 +1,521 @@
+{
+  "version": "1.0.0",
+  "kind": "olonjs-page-contract",
+  "slug": "culinary",
+  "title": "Culinary Excellence - Lumina Alpine Retreat",
+  "description": "Savor exceptional Michelin-starred cuisine featuring locally-sourced Alpine ingredients, artisanal preparations, and an award-winning wine cellar.",
+  "manifestHref": "/mcp-manifests/culinary.json",
+  "systemPrompt": "You are operating the \"Culinary Excellence - Lumina Alpine Retreat\" page in OlonJS Studio. Use only the declared tools and keep mutations valid against the section schema.",
+  "sectionTypes": [
+    "header",
+    "footer",
+    "page-hero",
+    "culinary-showcase",
+    "wine-cellar"
+  ],
+  "sectionInstances": [
+    {
+      "id": "global-header",
+      "type": "header",
+      "scope": "global",
+      "label": "header"
+    },
+    {
+      "id": "global-footer",
+      "type": "footer",
+      "scope": "global",
+      "label": "footer"
+    },
+    {
+      "id": "culinary-hero",
+      "type": "page-hero",
+      "scope": "local",
+      "label": "Culinary Excellence"
+    },
+    {
+      "id": "culinary-showcase",
+      "type": "culinary-showcase",
+      "scope": "local",
+      "label": "Alpine Gastronomy Redefined"
+    },
+    {
+      "id": "wine-cellar-detail",
+      "type": "wine-cellar",
+      "scope": "local",
+      "label": "Curated Alpine Wines"
+    }
+  ],
+  "sectionSchemas": {
+    "header": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "anchorId": {
+          "type": "string",
+          "description": "ui:text"
+        },
+        "logoText": {
+          "type": "string",
+          "description": "ui:text"
+        },
+        "logoHighlight": {
+          "type": "string",
+          "description": "ui:text"
+        },
+        "logoHref": {
+          "type": "string",
+          "description": "ui:text"
+        },
+        "announcement": {
+          "type": "string",
+          "description": "ui:text"
+        },
+        "scrollThreshold": {
+          "type": "number",
+          "description": "ui:number"
+        },
+        "menu": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "ui:text"
+              },
+              "label": {
+                "type": "string",
+                "description": "ui:text"
+              },
+              "href": {
+                "type": "string",
+                "description": "ui:text"
+              },
+              "badge": {
+                "type": "string",
+                "description": "ui:text"
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "label",
+              "href"
+            ]
+          },
+          "description": "ui:list"
+        },
+        "actions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "ui:text"
+              },
+              "label": {
+                "type": "string",
+                "description": "ui:text"
+              },
+              "href": {
+                "type": "string",
+                "description": "ui:text"
+              },
+              "variant": {
+                "type": "string",
+                "enum": [
+                  "primary",
+                  "ghost"
+                ],
+                "description": "ui:select",
+                "default": "ghost"
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "label",
+              "href"
+            ]
+          },
+          "description": "ui:list"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "logoText"
+      ]
+    },
+    "footer": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "anchorId": {
+          "type": "string",
+          "description": "ui:text"
+        },
+        "brandText": {
+          "type": "string",
+          "description": "ui:text"
+        },
+        "brandHighlight": {
+          "type": "string",
+          "description": "ui:text"
+        },
+        "tagline": {
+          "type": "string",
+          "description": "ui:text"
+        },
+        "address": {
+          "type": "string",
+          "description": "ui:textarea"
+        },
+        "phone": {
+          "type": "string",
+          "description": "ui:text"
+        },
+        "email": {
+          "type": "string",
+          "description": "ui:text"
+        },
+        "copyright": {
+          "type": "string",
+          "description": "ui:text"
+        },
+        "menu": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "href": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "label",
+              "href"
+            ]
+          },
+          "description": "ui:list"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "brandText",
+        "copyright"
+      ]
+    },
+    "page-hero": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "anchorId": {
+          "type": "string",
+          "description": "ui:text"
+        },
+        "title": {
+          "type": "string",
+          "description": "ui:text"
+        },
+        "description": {
+          "type": "string",
+          "description": "ui:textarea"
+        },
+        "breadcrumbs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              },
+              "href": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "label",
+              "href"
+            ]
+          },
+          "description": "ui:list"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "title"
+      ]
+    },
+    "culinary-showcase": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "anchorId": {
+          "type": "string",
+          "description": "ui:text"
+        },
+        "label": {
+          "type": "string",
+          "description": "ui:text"
+        },
+        "title": {
+          "type": "string",
+          "description": "ui:text"
+        },
+        "description": {
+          "type": "string",
+          "description": "ui:textarea"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string",
+                "description": "ui:text"
+              },
+              "description": {
+                "type": "string",
+                "description": "ui:textarea"
+              },
+              "image": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string"
+                  },
+                  "alt": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "url"
+                ],
+                "description": "ui:image-picker"
+              },
+              "badge": {
+                "type": "string",
+                "description": "ui:text"
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "title",
+              "description"
+            ]
+          },
+          "description": "ui:list"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "items"
+      ]
+    },
+    "wine-cellar": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "anchorId": {
+          "type": "string",
+          "description": "ui:text"
+        },
+        "label": {
+          "type": "string",
+          "description": "ui:text"
+        },
+        "title": {
+          "type": "string",
+          "description": "ui:text"
+        },
+        "description": {
+          "type": "string",
+          "description": "ui:textarea"
+        },
+        "image": {
+          "type": "object",
+          "properties": {
+            "url": {
+              "type": "string"
+            },
+            "alt": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "url"
+          ],
+          "description": "ui:image-picker"
+        },
+        "wines": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string",
+                "description": "ui:text"
+              },
+              "vintage": {
+                "type": "string",
+                "description": "ui:text"
+              },
+              "region": {
+                "type": "string",
+                "description": "ui:text"
+              },
+              "description": {
+                "type": "string",
+                "description": "ui:textarea"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "red",
+                  "white",
+                  "sparkling",
+                  "dessert"
+                ],
+                "description": "ui:select"
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "description"
+            ]
+          },
+          "description": "ui:list"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "wines"
+      ]
+    }
+  },
+  "tools": [
+    {
+      "name": "update-section",
+      "description": "Update a section field in the Studio draft. Does not persist — call save when all updates are complete. Use sectionType to select the matching schema from sectionSchemas.",
+      "inputSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "slug": {
+            "type": "string",
+            "description": "Canonical page slug currently open in Studio."
+          },
+          "sectionId": {
+            "type": "string",
+            "description": "Concrete section instance id inside the current draft."
+          },
+          "sectionType": {
+            "type": "string",
+            "description": "Section type being updated (for example \"hero\" or \"header\"). Used to select the correct validation schema."
+          },
+          "scope": {
+            "type": "string",
+            "enum": [
+              "local",
+              "global"
+            ],
+            "default": "local"
+          },
+          "data": {
+            "type": "object",
+            "description": "Full replacement payload validated against the schema declared for sectionType."
+          },
+          "itemPath": {
+            "type": "array",
+            "description": "Optional root-to-leaf selection path for targeted field mutation.",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "fieldKey": {
+                  "type": "string"
+                },
+                "itemId": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "fieldKey"
+              ]
+            }
+          },
+          "value": {
+            "description": "Value written to the final field targeted by itemPath."
+          },
+          "fieldKey": {
+            "type": "string",
+            "description": "Shorthand for a top-level scalar field update when itemPath is omitted."
+          }
+        },
+        "required": [
+          "sectionId"
+        ],
+        "oneOf": [
+          {
+            "required": [
+              "data"
+            ]
+          },
+          {
+            "required": [
+              "itemPath",
+              "value"
+            ]
+          },
+          {
+            "required": [
+              "fieldKey",
+              "value"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "save",
+      "description": "Persist all pending draft changes using the active save mode (local file, hot save, or save2repo). Call once after all update-section calls are complete.",
+      "inputSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {}
+      }
+    }
+  ]
+}

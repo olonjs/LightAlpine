@@ -1,0 +1,340 @@
+/* Leading remote @import: App.tsx / entry-ssg.tsx prepend this before index.css?inline
+   so extractLeadingRemoteCssImports() can turn it into <link rel="stylesheet"> in <head>.
+   Families must match src/data/config/theme.json → tokens.typography.fontFamily. */
+   @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+@source "./**/*.tsx";
+
+/* -- Layer 2: Tailwind @theme — namespace bridge so utilities resolve via tenant tokens.
+   See ADR-003 for the full chain rationale. */
+@theme {
+  /* Colors → bridged from Layer 1 semantic names (see :root below). */
+  --color-background:           var(--background);
+  --color-foreground:           var(--foreground);
+  --color-card:                 var(--card);
+  --color-card-foreground:      var(--card-foreground);
+  --color-primary:              var(--primary);
+  --color-primary-foreground:   var(--primary-foreground);
+  --color-secondary:            var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted:                var(--muted);
+  --color-muted-foreground:     var(--muted-foreground);
+  --color-accent:               var(--accent);
+  --color-border:               var(--border);
+
+  /* Radius → engine alias. */
+  --radius-sm:   var(--theme-radius-sm);
+  --radius-md:   var(--theme-radius-md);
+  --radius-lg:   var(--theme-radius-lg);
+  --radius-xl:   var(--theme-border-radius-xl);
+  --radius-full: var(--theme-border-radius-full);
+
+  /* Fonts → engine alias. */
+  --font-primary: var(--theme-font-primary);
+  --font-mono:    var(--theme-font-mono);
+  --font-display: var(--theme-font-display);
+
+  /* Type scale → tokens.typography.scale. */
+  --text-xs:   var(--theme-typography-scale-xs);
+  --text-sm:   var(--theme-typography-scale-sm);
+  --text-base: var(--theme-typography-scale-base);
+  --text-lg:   var(--theme-typography-scale-lg);
+  --text-xl:   var(--theme-typography-scale-xl);
+  --text-2xl:  var(--theme-typography-scale-2xl);
+  --text-3xl:  var(--theme-typography-scale-3xl);
+  --text-4xl:  var(--theme-typography-scale-4xl);
+  --text-5xl:  var(--theme-typography-scale-5xl);
+
+  /* Tracking → tokens.typography.tracking. */
+  --tracking-tight:         var(--theme-typography-tracking-tight);
+  --tracking-normal:        var(--theme-typography-tracking-normal);
+  --tracking-wide:          var(--theme-typography-tracking-wide);
+  --tracking-widest:        var(--theme-typography-tracking-widest);
+  --tracking-overlay-label: var(--theme-typography-tracking-overlay-label);
+
+  /* Leading → tokens.typography.leading. */
+  --leading-tight:   var(--theme-typography-leading-tight);
+  --leading-normal:  var(--theme-typography-leading-normal);
+  --leading-relaxed: var(--theme-typography-leading-relaxed);
+
+  /* Spacing → tokens.spacing. */
+  --spacing-container-max:  var(--theme-spacing-container-max);
+  --spacing-section-y:      var(--theme-spacing-section-y);
+  --spacing-header-h:       var(--theme-spacing-header-h);
+  --spacing-overlay-label-x: var(--theme-spacing-overlay-label-x);
+  --spacing-overlay-label-y: var(--theme-spacing-overlay-label-y);
+}
+
+:root {
+  /* -- Layer 1: tenant semantic bridge -----------------------------
+     Engine injects: --theme-colors-{name}, --theme-font-*,
+     --theme-border-radius-*, --theme-spacing-*, --theme-z-index-*,
+     --theme-animation-*, --theme-borders-*, --theme-semantic-*.
+     Naming below is the tenant's sovereign choice — sections consume
+     these via --local-* (Layer 3).
+  ---------------------------------------------------------- */
+
+  /* Colors */
+  --background:           var(--theme-colors-background);
+  --foreground:           var(--theme-colors-foreground);
+  --card:                 var(--theme-colors-card);
+  --card-foreground:      var(--theme-colors-card-foreground);
+  --elevated:             var(--theme-colors-elevated);
+  --overlay:              var(--theme-colors-overlay);
+  --primary:              var(--theme-colors-primary);
+  --primary-foreground:   var(--theme-colors-primary-foreground);
+  --primary-light:        var(--theme-colors-primary-light);
+  --primary-dark:         var(--theme-colors-primary-dark);
+  --secondary:            var(--theme-colors-secondary);
+  --secondary-foreground: var(--theme-colors-secondary-foreground);
+  --muted:                var(--theme-colors-muted);
+  --muted-foreground:     var(--theme-colors-muted-foreground);
+  --accent:               var(--theme-colors-accent);
+  --accent-foreground:    var(--theme-colors-accent-foreground);
+  --border:               var(--theme-colors-border);
+  --border-strong:        var(--theme-colors-border-strong);
+  --input:                var(--theme-colors-input);
+  --ring:                 var(--theme-colors-ring);
+  --destructive:          var(--theme-colors-destructive);
+  --destructive-foreground: var(--theme-colors-destructive-foreground);
+  --success:              var(--theme-colors-success);
+  --success-foreground:   var(--theme-colors-success-foreground);
+  --warning:              var(--theme-colors-warning);
+  --warning-foreground:   var(--theme-colors-warning-foreground);
+  --info:                 var(--theme-colors-info);
+  --info-foreground:      var(--theme-colors-info-foreground);
+  --glass-surface:        var(--theme-colors-glass-surface);
+  --glass-border:         var(--theme-colors-glass-border);
+  --radius:               var(--theme-radius-lg);
+
+  /* Wordmark — see .font-wordmark helper below. */
+  --wordmark-font:     var(--theme-typography-wordmark-font-family);
+  --wordmark-weight:   var(--theme-typography-wordmark-weight);
+  --wordmark-tracking: var(--theme-typography-wordmark-tracking);
+
+  /* zIndex semantic — overlay-stage reserved for Studio chrome (TOCC). */
+  --z-base:          var(--theme-z-index-base);
+  --z-elevated:      var(--theme-z-index-elevated);
+  --z-dropdown:      var(--theme-z-index-dropdown);
+  --z-sticky:        var(--theme-z-index-sticky);
+  --z-overlay:       var(--theme-z-index-overlay);
+  --z-modal:         var(--theme-z-index-modal);
+  --z-toast:         var(--theme-z-index-toast);
+  --z-overlay-stage: var(--theme-z-index-overlay-stage);
+
+  /* Animation — durations / easings / delays. */
+  --anim-duration-instant: var(--theme-animation-duration-instant);
+  --anim-duration-fast:    var(--theme-animation-duration-fast);
+  --anim-duration-normal:  var(--theme-animation-duration-normal);
+  --anim-duration-slow:    var(--theme-animation-duration-slow);
+  --anim-duration-slower:  var(--theme-animation-duration-slower);
+  --anim-easing-linear: var(--theme-animation-easing-linear);
+  --anim-easing-in:     var(--theme-animation-easing-in);
+  --anim-easing-out:    var(--theme-animation-easing-out);
+  --anim-easing-inout:  var(--theme-animation-easing-inOut);
+  --anim-easing-bounce: var(--theme-animation-easing-bounce);
+  --anim-delay-none: var(--theme-animation-delay-none);
+  --anim-delay-xs:   var(--theme-animation-delay-xs);
+  --anim-delay-sm:   var(--theme-animation-delay-sm);
+  --anim-delay-md:   var(--theme-animation-delay-md);
+  --anim-delay-lg:   var(--theme-animation-delay-lg);
+
+  /* Borders — widths and styles. */
+  --border-width-none:  var(--theme-borders-width-none);
+  --border-width-thin:  var(--theme-borders-width-thin);
+  --border-width-base:  var(--theme-borders-width-base);
+  --border-width-thick: var(--theme-borders-width-thick);
+  --border-style-solid:  var(--theme-borders-style-solid);
+  --border-style-dashed: var(--theme-borders-style-dashed);
+  --border-style-dotted: var(--theme-borders-style-dotted);
+
+  /* Semantic categorical palettes — consumed by sections via --local-*. */
+  --semantic-difficulty-easy-bg:        var(--theme-semantic-difficulty-easy-bg);
+  --semantic-difficulty-easy-border:    var(--theme-semantic-difficulty-easy-border);
+  --semantic-difficulty-easy-text:      var(--theme-semantic-difficulty-easy-text);
+  --semantic-difficulty-moderate-bg:    var(--theme-semantic-difficulty-moderate-bg);
+  --semantic-difficulty-moderate-border: var(--theme-semantic-difficulty-moderate-border);
+  --semantic-difficulty-moderate-text:  var(--theme-semantic-difficulty-moderate-text);
+  --semantic-difficulty-challenging-bg:    var(--theme-semantic-difficulty-challenging-bg);
+  --semantic-difficulty-challenging-border: var(--theme-semantic-difficulty-challenging-border);
+  --semantic-difficulty-challenging-text:  var(--theme-semantic-difficulty-challenging-text);
+  --semantic-difficulty-expert-bg:    var(--theme-semantic-difficulty-expert-bg);
+  --semantic-difficulty-expert-border: var(--theme-semantic-difficulty-expert-border);
+  --semantic-difficulty-expert-text:  var(--theme-semantic-difficulty-expert-text);
+
+  --semantic-wine-red-bg:        var(--theme-semantic-wine-red-bg);
+  --semantic-wine-red-border:    var(--theme-semantic-wine-red-border);
+  --semantic-wine-red-text:      var(--theme-semantic-wine-red-text);
+  --semantic-wine-white-bg:      var(--theme-semantic-wine-white-bg);
+  --semantic-wine-white-border:  var(--theme-semantic-wine-white-border);
+  --semantic-wine-white-text:    var(--theme-semantic-wine-white-text);
+  --semantic-wine-sparkling-bg:     var(--theme-semantic-wine-sparkling-bg);
+  --semantic-wine-sparkling-border: var(--theme-semantic-wine-sparkling-border);
+  --semantic-wine-sparkling-text:   var(--theme-semantic-wine-sparkling-text);
+  --semantic-wine-dessert-bg:    var(--theme-semantic-wine-dessert-bg);
+  --semantic-wine-dessert-border: var(--theme-semantic-wine-dessert-border);
+  --semantic-wine-dessert-text:  var(--theme-semantic-wine-dessert-text);
+
+  --semantic-overlay-text-on-image:       var(--theme-semantic-overlay-text-on-image);
+  --semantic-overlay-text-on-image-muted: var(--theme-semantic-overlay-text-on-image-muted);
+
+  /* Theme-derived helpers for section-owned demo/mockup surfaces. */
+  --demo-surface:         color-mix(in oklch, var(--card) 86%, var(--background));
+  --demo-surface-soft:    color-mix(in oklch, var(--card) 72%, var(--background));
+  --demo-surface-strong:  color-mix(in oklch, var(--background) 82%, black);
+  --demo-surface-deep:    color-mix(in oklch, var(--background) 70%, black);
+  --demo-border-soft:     color-mix(in oklch, var(--foreground) 8%, transparent);
+  --demo-border-strong:   color-mix(in oklch, var(--primary) 24%, transparent);
+  --demo-accent-soft:     color-mix(in oklch, var(--primary) 10%, transparent);
+  --demo-accent-strong:   color-mix(in oklch, var(--primary) 18%, transparent);
+  --demo-text-soft:       color-mix(in oklch, var(--foreground) 88%, var(--muted-foreground));
+  --demo-text-faint:      color-mix(in oklch, var(--muted-foreground) 72%, transparent);
+}
+
+/* LIGHT MODE OVERRIDES */
+[data-theme="light"] {
+  /* Colors */
+  --background:           var(--theme-modes-light-colors-background);
+  --foreground:           var(--theme-modes-light-colors-foreground);
+  --card:                 var(--theme-modes-light-colors-card);
+  --card-foreground:      var(--theme-modes-light-colors-card-foreground);
+  --elevated:             var(--theme-modes-light-colors-elevated);
+  --overlay:              var(--theme-modes-light-colors-overlay);
+  --primary:              var(--theme-modes-light-colors-primary);
+  --primary-foreground:   var(--theme-modes-light-colors-primary-foreground);
+  --primary-light:        var(--theme-modes-light-colors-primary-light);
+  --primary-dark:         var(--theme-modes-light-colors-primary-dark);
+  --secondary:            var(--theme-modes-light-colors-secondary);
+  --secondary-foreground: var(--theme-modes-light-colors-secondary-foreground);
+  --muted:                var(--theme-modes-light-colors-muted);
+  --muted-foreground:     var(--theme-modes-light-colors-muted-foreground);
+  --accent:               var(--theme-modes-light-colors-accent);
+  --accent-foreground:    var(--theme-modes-light-colors-accent-foreground);
+  --border:               var(--theme-modes-light-colors-border);
+  --border-strong:        var(--theme-modes-light-colors-border-strong);
+  --input:                var(--theme-modes-light-colors-input);
+  --ring:                 var(--theme-modes-light-colors-ring);
+  --destructive:          var(--theme-modes-light-colors-destructive);
+  --destructive-foreground: var(--theme-modes-light-colors-destructive-foreground);
+  --success:              var(--theme-modes-light-colors-success);
+  --success-foreground:   var(--theme-modes-light-colors-success-foreground);
+  --warning:              var(--theme-modes-light-colors-warning);
+  --warning-foreground:   var(--theme-modes-light-colors-warning-foreground);
+  --info:                 var(--theme-modes-light-colors-info);
+  --info-foreground:      var(--theme-modes-light-colors-info-foreground);
+  --glass-surface:        var(--theme-modes-light-colors-glass-surface);
+  --glass-border:         var(--theme-modes-light-colors-glass-border);
+
+  /* Semantic palette overrides for light mode (perceptual contrast). */
+  --semantic-difficulty-easy-bg:        var(--theme-modes-light-semantic-difficulty-easy-bg);
+  --semantic-difficulty-easy-border:    var(--theme-modes-light-semantic-difficulty-easy-border);
+  --semantic-difficulty-easy-text:      var(--theme-modes-light-semantic-difficulty-easy-text);
+  --semantic-difficulty-moderate-bg:    var(--theme-modes-light-semantic-difficulty-moderate-bg);
+  --semantic-difficulty-moderate-border: var(--theme-modes-light-semantic-difficulty-moderate-border);
+  --semantic-difficulty-moderate-text:  var(--theme-modes-light-semantic-difficulty-moderate-text);
+  --semantic-difficulty-challenging-bg:    var(--theme-modes-light-semantic-difficulty-challenging-bg);
+  --semantic-difficulty-challenging-border: var(--theme-modes-light-semantic-difficulty-challenging-border);
+  --semantic-difficulty-challenging-text:  var(--theme-modes-light-semantic-difficulty-challenging-text);
+  --semantic-difficulty-expert-bg:    var(--theme-modes-light-semantic-difficulty-expert-bg);
+  --semantic-difficulty-expert-border: var(--theme-modes-light-semantic-difficulty-expert-border);
+  --semantic-difficulty-expert-text:  var(--theme-modes-light-semantic-difficulty-expert-text);
+
+  --semantic-wine-red-bg:        var(--theme-modes-light-semantic-wine-red-bg);
+  --semantic-wine-red-border:    var(--theme-modes-light-semantic-wine-red-border);
+  --semantic-wine-red-text:      var(--theme-modes-light-semantic-wine-red-text);
+  --semantic-wine-white-bg:      var(--theme-modes-light-semantic-wine-white-bg);
+  --semantic-wine-white-border:  var(--theme-modes-light-semantic-wine-white-border);
+  --semantic-wine-white-text:    var(--theme-modes-light-semantic-wine-white-text);
+  --semantic-wine-sparkling-bg:     var(--theme-modes-light-semantic-wine-sparkling-bg);
+  --semantic-wine-sparkling-border: var(--theme-modes-light-semantic-wine-sparkling-border);
+  --semantic-wine-sparkling-text:   var(--theme-modes-light-semantic-wine-sparkling-text);
+  --semantic-wine-dessert-bg:    var(--theme-modes-light-semantic-wine-dessert-bg);
+  --semantic-wine-dessert-border: var(--theme-modes-light-semantic-wine-dessert-border);
+  --semantic-wine-dessert-text:  var(--theme-modes-light-semantic-wine-dessert-text);
+}
+
+@layer base {
+  * { border-color: var(--border); }
+  /* Same surface as body so route swaps never flash "paper white" behind #root */
+  html,
+  #root {
+    background-color: var(--background);
+    min-height: 100%;
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-primary);
+    line-height: var(--leading-relaxed);
+    overflow-x: hidden;
+    /* Offset for fixed shell header; tenant header sets --jp-fixed-shell-header-height */
+    padding-top: var(--jp-fixed-shell-header-height, 0px);
+    @apply antialiased;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display, var(--font-primary));
+}
+
+/* Wordmark helper — header/footer brand text. Token-driven; do NOT inline. */
+.font-wordmark {
+  font-family: var(--wordmark-font);
+  font-weight: var(--wordmark-weight);
+  letter-spacing: var(--wordmark-tracking);
+}
+
+/* Global smooth scrolling makes client route changes feel "flickery" with React Router + layout.
+   Use Tailwind scroll-smooth on specific blocks if you need it. */
+html { scroll-behavior: auto; }
+
+/* Animation classes — durations/easings/delays from tokens.animation. */
+@keyframes jp-fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.jp-animate-in { opacity: 0; animation: jp-fadeUp var(--anim-duration-slow) var(--anim-easing-out) forwards; }
+.jp-d1 { animation-delay: var(--anim-delay-xs); }
+.jp-d2 { animation-delay: var(--anim-delay-sm); }
+.jp-d3 { animation-delay: var(--anim-delay-md); }
+.jp-d4 { animation-delay: var(--anim-delay-lg); }
+
+@keyframes jp-pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.85); }
+}
+.jp-pulse-dot { animation: jp-pulseDot var(--anim-duration-slower) var(--anim-easing-out) infinite; }
+
+/* TOCC — required by spec §7. All values flow from tokens; see ADR-003. */
+[data-jp-section-overlay] {
+  position: absolute; inset: 0;
+  z-index: var(--z-overlay-stage);
+  pointer-events: none;
+  border: var(--border-width-base) var(--border-style-solid) transparent;
+  transition:
+    border-color var(--anim-duration-fast) var(--anim-easing-out),
+    background-color var(--anim-duration-fast) var(--anim-easing-out);
+}
+[data-section-id]:hover [data-jp-section-overlay] {
+  border: var(--border-width-base) var(--border-style-dashed) color-mix(in oklch, var(--primary) 50%, transparent);
+  background-color: color-mix(in oklch, var(--primary) 6%, transparent);
+}
+[data-section-id][data-jp-selected] [data-jp-section-overlay] {
+  border: var(--border-width-base) var(--border-style-solid) var(--primary);
+  background-color: color-mix(in oklch, var(--primary) 10%, transparent);
+}
+[data-jp-section-overlay] > div {
+  position: absolute; top: 0; right: 0;
+  padding: var(--spacing-overlay-label-y) var(--spacing-overlay-label-x);
+  font-size: var(--text-xs);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-overlay-label);
+  background: var(--primary);
+  color: var(--primary-foreground);
+  opacity: 0;
+  transition: opacity var(--anim-duration-fast) var(--anim-easing-out);
+}
+[data-section-id]:hover [data-jp-section-overlay] > div,
+[data-section-id][data-jp-selected] [data-jp-section-overlay] > div { opacity: 1; }

@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700;800&display=swap');
+
+/* Typography contract: import this before any other CSS rules. */
+
+@import "tailwindcss";
+@source "./**/*.tsx";
+
+@theme {
+  --color-background:           var(--background);
+  --color-foreground:           var(--foreground);
+  --color-card:                 var(--card);
+  --color-card-foreground:      var(--card-foreground);
+  --color-primary:              var(--primary);
+  --color-primary-foreground:   var(--primary-foreground);
+  --color-secondary:            var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted:                var(--muted);
+  --color-muted-foreground:     var(--muted-foreground);
+  --color-accent:               var(--accent);
+  --color-border:               var(--border);
+  --radius-lg:                  var(--theme-radius-lg);
+  --radius-md:                  var(--theme-radius-md);
+  --radius-sm:                  var(--theme-radius-sm);
+  --font-primary: var(--theme-font-primary);
+  --font-mono:    var(--theme-font-mono);
+  --font-display: var(--theme-font-display);
+}
+
+:root {
+  /* -- Layer 1: semantic bridge -----------------------------
+     Engine injects: --theme-colors-{name}, --theme-font-*,
+     --theme-border-radius-*, --theme-spacing-*, --theme-z-index-*
+     The naming below is the tenant's sovereign choice.
+  ---------------------------------------------------------- */
+  --background:           var(--theme-colors-background);
+  --foreground:           var(--theme-colors-foreground);
+  --card:                 var(--theme-colors-card);
+  --card-foreground:      var(--theme-colors-card-foreground);
+  --elevated:             var(--theme-colors-elevated);
+  --overlay:              var(--theme-colors-overlay);
+  --primary:              var(--theme-colors-primary);
+  --primary-foreground:   var(--theme-colors-primary-foreground);
+  --primary-light:        var(--theme-colors-primary-light);
+  --primary-dark:         var(--theme-colors-primary-dark);
+  --secondary:            var(--theme-colors-secondary);
+  --secondary-foreground: var(--theme-colors-secondary-foreground);
+  --muted:                var(--theme-colors-muted);
+  --muted-foreground:     var(--theme-colors-muted-foreground);
+  --accent:               var(--theme-colors-accent);
+  --accent-foreground:    var(--theme-colors-accent-foreground);
+  --border:               var(--theme-colors-border);
+  --border-strong:        var(--theme-colors-border-strong);
+  --input:                var(--theme-colors-input);
+  --ring:                 var(--theme-colors-ring);
+  --destructive:          var(--theme-colors-destructive);
+  --destructive-foreground: var(--theme-colors-destructive-foreground);
+  --success:              var(--theme-colors-success);
+  --success-foreground:   var(--theme-colors-success-foreground);
+  --warning:              var(--theme-colors-warning);
+  --warning-foreground:   var(--theme-colors-warning-foreground);
+  --info:                 var(--theme-colors-info);
+  --info-foreground:      var(--theme-colors-info-foreground);
+  --radius:               var(--theme-radius-lg);
+
+  /* Theme-derived helpers for section-owned demo/mockup surfaces. */
+  --demo-surface:         color-mix(in oklch, var(--card) 86%, var(--background));
+  --demo-surface-soft:    color-mix(in oklch, var(--card) 72%, var(--background));
+  --demo-surface-strong:  color-mix(in oklch, var(--background) 82%, black);
+  --demo-surface-deep:    color-mix(in oklch, var(--background) 70%, black);
+  --demo-border-soft:     color-mix(in oklch, var(--foreground) 8%, transparent);
+  --demo-border-strong:   color-mix(in oklch, var(--primary) 24%, transparent);
+  --demo-accent-soft:     color-mix(in oklch, var(--primary) 10%, transparent);
+  --demo-accent-strong:   color-mix(in oklch, var(--primary) 18%, transparent);
+  --demo-text-soft:       color-mix(in oklch, var(--foreground) 88%, var(--muted-foreground));
+  --demo-text-faint:      color-mix(in oklch, var(--muted-foreground) 72%, transparent);
+}
+
+/* LIGHT MODE OVERRIDES */
+[data-theme="light"] {
+  --background:           var(--theme-modes-light-colors-background);
+  --foreground:           var(--theme-modes-light-colors-foreground);
+  --card:                 var(--theme-modes-light-colors-card);
+  --card-foreground:      var(--theme-modes-light-colors-card-foreground);
+  --elevated:             var(--theme-modes-light-colors-elevated);
+  --overlay:              var(--theme-modes-light-colors-overlay);
+  --primary:              var(--theme-modes-light-colors-primary);
+  --primary-foreground:   var(--theme-modes-light-colors-primary-foreground);
+  --primary-light:        var(--theme-modes-light-colors-primary-light);
+  --primary-dark:         var(--theme-modes-light-colors-primary-dark);
+  --secondary:            var(--theme-modes-light-colors-secondary);
+  --secondary-foreground: var(--theme-modes-light-colors-secondary-foreground);
+  --muted:                var(--theme-modes-light-colors-muted);
+  --muted-foreground:     var(--theme-modes-light-colors-muted-foreground);
+  --accent:               var(--theme-modes-light-colors-accent);
+  --accent-foreground:    var(--theme-modes-light-colors-accent-foreground);
+  --border:               var(--theme-modes-light-colors-border);
+  --border-strong:        var(--theme-modes-light-colors-border-strong);
+  --input:                var(--theme-modes-light-colors-input);
+  --ring:                 var(--theme-modes-light-colors-ring);
+  --destructive:          var(--theme-modes-light-colors-destructive);
+  --destructive-foreground: var(--theme-modes-light-colors-destructive-foreground);
+  --success:              var(--theme-modes-light-colors-success);
+  --success-foreground:   var(--theme-modes-light-colors-success-foreground);
+  --warning:              var(--theme-modes-light-colors-warning);
+  --warning-foreground:   var(--theme-modes-light-colors-warning-foreground);
+  --info:                 var(--theme-modes-light-colors-info);
+  --info-foreground:      var(--theme-modes-light-colors-info-foreground);
+}
+
+@layer base {
+  * { border-color: var(--border); }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-primary);
+    line-height: 1.7;
+    overflow-x: hidden;
+    @apply antialiased;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display, var(--font-primary));
+}
+
+html { scroll-behavior: smooth; }
+
+/* Animation classes */
+@keyframes jp-fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.jp-animate-in { opacity: 0; animation: jp-fadeUp 0.7s ease forwards; }
+.jp-d1 { animation-delay: 0.1s; }
+.jp-d2 { animation-delay: 0.2s; }
+.jp-d3 { animation-delay: 0.3s; }
+.jp-d4 { animation-delay: 0.4s; }
+
+@keyframes jp-pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.85); }
+}
+.jp-pulse-dot { animation: jp-pulseDot 2s ease infinite; }
+
+/* TOCC — required by §7 spec */
+[data-jp-section-overlay] {
+  position: absolute; inset: 0; z-index: 9999;
+  pointer-events: none; border: 2px solid transparent;
+  transition: border-color 0.15s, background-color 0.15s;
+}
+[data-section-id]:hover [data-jp-section-overlay] {
+  border: 2px dashed color-mix(in oklch, var(--primary) 50%, transparent);
+  background-color: color-mix(in oklch, var(--primary) 6%, transparent);
+}
+[data-section-id][data-jp-selected] [data-jp-section-overlay] {
+  border: 2px solid var(--primary);
+  background-color: color-mix(in oklch, var(--primary) 10%, transparent);
+}
+[data-jp-section-overlay] > div {
+  position: absolute; top: 0; right: 0;
+  padding: 0.2rem 0.55rem;
+  font-size: 9px; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  background: var(--primary); color: #fff;
+  opacity: 0; transition: opacity 0.15s;
+}
+[data-section-id]:hover [data-jp-section-overlay] > div,
+[data-section-id][data-jp-selected] [data-jp-section-overlay] > div { opacity: 1; }
+

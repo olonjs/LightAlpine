@@ -1,33 +1,33 @@
 {
   "id": "home-page",
+  "slug": "home",
   "meta": {
     "title": "Lumina Alpine Retreat - Luxury Eco-Resort in the Dolomites",
     "description": "Experience unparalleled luxury in the heart of the Italian Dolomites. Premium eco-resort featuring world-class spa, Michelin-starred dining, and exclusive alpine adventures."
   },
-  "slug": "home",
   "sections": [
     {
       "id": "home-hero",
       "data": {
+        "backgroundImage": {
+          "url": "https://www.familywelcome.org/wp-content/uploads/2020/01/Excelsior_Dolomites_Life_Resort_San_Vigilio_Dolomiti.jpg",
+          "alt": ""
+        },
         "badge": "Luxury Alpine Retreat",
-        "title": "Where Mountains",
+        "title": "Welcome to the Summer 2026",
+        "titleHighlight": "Launch",
+        "description": "",
         "primaryCta": {
           "id": "hero-primary",
-          "href": "/book",
           "label": "Reserve Your Stay",
+          "href": "/book",
           "variant": "primary"
         },
-        "description": "",
         "secondaryCta": {
           "id": "hero-secondary",
-          "href": "/accommodations",
           "label": "Explore Resort",
+          "href": "/accommodations",
           "variant": "secondary"
-        },
-        "titleHighlight": "Meet Serenity",
-        "backgroundImage": {
-          "alt": "",
-          "url": "https://www.familywelcome.org/wp-content/uploads/2020/01/Excelsior_Dolomites_Life_Resort_San_Vigilio_Dolomiti.jpg"
         }
       },
       "type": "alpine-hero",

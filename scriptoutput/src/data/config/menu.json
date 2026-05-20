@@ -1,0 +1,16 @@
+{
+  "main": [
+    { "label": "Home", "href": "/" },
+    { "label": "Accommodations", "href": "/accommodations" },
+    { "label": "Wellness & Spa", "href": "/wellness" },
+    { "label": "Culinary", "href": "/culinary" },
+    { "label": "Experiences", "href": "/experiences" }
+  ],
+  "footer": [
+    { "label": "About", "href": "/about" },
+    { "label": "Privacy Policy", "href": "/privacy" },
+    { "label": "Terms of Service", "href": "/terms" },
+    { "label": "Contact", "href": "/contact" }
+  ]
+}
+

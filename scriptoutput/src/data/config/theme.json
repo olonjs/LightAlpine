@@ -1,6 +1,6 @@
 {
   "name": "Lumina Alpine Retreat - Airy Edition",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "tokens": {
     "colors": {
       "background": "#192620",
@@ -49,9 +49,7 @@
       "warning-border": "#8F703A",
       "info": "#6C9CE0",
       "info-foreground": "#192620",
-      "info-border": "#3A5C8F",
-      "glass-surface": "rgba(244, 247, 245, 0.50)",
-      "glass-border": "rgba(244, 247, 245, 0.20)"
+      "info-border": "#3A5C8F"
     },
     "modes": {
       "light": {
@@ -92,78 +90,8 @@
           "warning-border": "#FCD34D",
           "info": "#2563EB",
           "info-foreground": "#FFFFFF",
-          "info-border": "#93C5FD",
-          "glass-surface": "rgba(25, 38, 32, 0.08)",
-          "glass-border": "rgba(25, 38, 32, 0.18)"
-        },
-        "semantic": {
-          "difficulty": {
-            "easy-bg": "rgba(22, 163, 74, 0.10)",
-            "easy-border": "rgba(22, 163, 74, 0.25)",
-            "easy-text": "#15803D",
-            "moderate-bg": "rgba(217, 119, 6, 0.10)",
-            "moderate-border": "rgba(217, 119, 6, 0.25)",
-            "moderate-text": "#B45309",
-            "challenging-bg": "rgba(234, 88, 12, 0.10)",
-            "challenging-border": "rgba(234, 88, 12, 0.25)",
-            "challenging-text": "#9A3412",
-            "expert-bg": "rgba(220, 38, 38, 0.10)",
-            "expert-border": "rgba(220, 38, 38, 0.25)",
-            "expert-text": "#991B1B"
-          },
-          "wine": {
-            "red-bg": "rgba(159, 18, 57, 0.10)",
-            "red-border": "rgba(159, 18, 57, 0.25)",
-            "red-text": "#9F1239",
-            "white-bg": "rgba(180, 138, 26, 0.10)",
-            "white-border": "rgba(180, 138, 26, 0.25)",
-            "white-text": "#854D0E",
-            "sparkling-bg": "rgba(7, 89, 133, 0.10)",
-            "sparkling-border": "rgba(7, 89, 133, 0.25)",
-            "sparkling-text": "#075985",
-            "dessert-bg": "rgba(126, 34, 206, 0.10)",
-            "dessert-border": "rgba(126, 34, 206, 0.25)",
-            "dessert-text": "#6B21A8"
-          },
-          "overlay": {
-            "text-on-image": "#FFFFFF",
-            "text-on-image-muted": "rgba(255, 255, 255, 0.80)"
-          }
+          "info-border": "#93C5FD"
         }
-      }
-    },
-    "semantic": {
-      "difficulty": {
-        "easy-bg": "rgba(109, 186, 130, 0.10)",
-        "easy-border": "rgba(109, 186, 130, 0.20)",
-        "easy-text": "#6DBA82",
-        "moderate-bg": "rgba(224, 184, 108, 0.10)",
-        "moderate-border": "rgba(224, 184, 108, 0.20)",
-        "moderate-text": "#E0B86C",
-        "challenging-bg": "rgba(217, 138, 89, 0.10)",
-        "challenging-border": "rgba(217, 138, 89, 0.20)",
-        "challenging-text": "#D98A59",
-        "expert-bg": "rgba(224, 108, 108, 0.10)",
-        "expert-border": "rgba(224, 108, 108, 0.20)",
-        "expert-text": "#E06C6C"
-      },
-      "wine": {
-        "red-bg": "rgba(209, 122, 138, 0.10)",
-        "red-border": "rgba(209, 122, 138, 0.22)",
-        "red-text": "#D17A8A",
-        "white-bg": "rgba(232, 200, 130, 0.10)",
-        "white-border": "rgba(232, 200, 130, 0.22)",
-        "white-text": "#E8C882",
-        "sparkling-bg": "rgba(150, 200, 220, 0.10)",
-        "sparkling-border": "rgba(150, 200, 220, 0.22)",
-        "sparkling-text": "#96C8DC",
-        "dessert-bg": "rgba(180, 130, 200, 0.10)",
-        "dessert-border": "rgba(180, 130, 200, 0.22)",
-        "dessert-text": "#B482C8"
-      },
-      "overlay": {
-        "text-on-image": "#FFFFFF",
-        "text-on-image-muted": "rgba(255, 255, 255, 0.80)"
       }
     },
     "typography": {
@@ -174,8 +102,7 @@
       },
       "wordmark": {
         "fontFamily": "\"Cormorant Garamond\", Helvetica, Arial, sans-serif",
-        "weight": "600",
-        "tracking": "-0.04em"
+        "weight": "600"
       },
       "scale": {
         "xs": "0.75rem",
@@ -192,8 +119,7 @@
         "tight": "-0.02em",
         "normal": "0em",
         "wide": "0.04em",
-        "widest": "0.14em",
-        "overlay-label": "0.1em"
+        "widest": "0.14em"
       },
       "leading": {
         "tight": "1.2",
@@ -211,9 +137,7 @@
     "spacing": {
       "container-max": "80rem",
       "section-y": "6rem",
-      "header-h": "5rem",
-      "overlay-label-x": "0.55rem",
-      "overlay-label-y": "0.2rem"
+      "header-h": "5rem"
     },
     "zIndex": {
       "base": "0",
@@ -222,44 +146,8 @@
       "sticky": "40",
       "overlay": "50",
       "modal": "60",
-      "toast": "100",
-      "overlay-stage": "9999"
-    },
-    "borders": {
-      "width": {
-        "none": "0",
-        "thin": "1px",
-        "base": "2px",
-        "thick": "4px"
-      },
-      "style": {
-        "solid": "solid",
-        "dashed": "dashed",
-        "dotted": "dotted"
-      }
-    },
-    "animation": {
-      "duration": {
-        "instant": "0s",
-        "fast": "0.15s",
-        "normal": "0.3s",
-        "slow": "0.7s",
-        "slower": "2s"
-      },
-      "easing": {
-        "linear": "linear",
-        "in": "cubic-bezier(0.4, 0, 1, 1)",
-        "out": "ease",
-        "inOut": "cubic-bezier(0.4, 0, 0.2, 1)",
-        "bounce": "cubic-bezier(0.68, -0.55, 0.265, 1.55)"
-      },
-      "delay": {
-        "none": "0s",
-        "xs": "0.1s",
-        "sm": "0.2s",
-        "md": "0.3s",
-        "lg": "0.4s"
-      }
+      "toast": "100"
     }
   }
 }
+

@@ -1,0 +1,135 @@
+{
+  "id": "home-page",
+  "slug": "home",
+  "meta": {
+    "title": "Lumina Alpine Retreat - Luxury Eco-Resort in the Dolomites",
+    "description": "Experience unparalleled luxury in the heart of the Italian Dolomites. Premium eco-resort featuring world-class spa, Michelin-starred dining, and exclusive alpine adventures."
+  },
+  "sections": [
+    {
+      "id": "home-hero",
+      "type": "alpine-hero",
+      "data": {
+        "badge": "Luxury Alpine Retreat",
+        "title": "Where Mountains",
+        "titleHighlight": "Meet Serenity",
+        "description": "Discover unparalleled luxury nestled in the heart of the Italian Dolomites. Experience world-class hospitality, pristine alpine beauty, and sustainable luxury that respects the natural environment.",
+        "primaryCta": { "id": "hero-primary", "label": "Reserve Your Stay", "href": "/book", "variant": "primary" },
+        "secondaryCta": { "id": "hero-secondary", "label": "Explore Resort", "href": "/accommodations", "variant": "secondary" }
+      },
+      "settings": {}
+    },
+    {
+      "id": "home-highlights",
+      "type": "resort-highlights",
+      "data": {
+        "label": "Resort Features",
+        "title": "Alpine Excellence Redefined",
+        "highlights": [
+          {
+            "id": "highlight-spa",
+            "title": "World-Class Spa",
+            "description": "Rejuvenate your body and soul with our award-winning wellness treatments inspired by Alpine traditions.",
+            "category": "Wellness",
+            "image": {
+              "url": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=90",
+              "alt": "Serene spa treatment room with mountain views and natural stone elements"
+            }
+          },
+          {
+            "id": "highlight-skiing",
+            "title": "Elite Skiing Access",
+            "description": "Direct access to pristine Dolomiti Superski slopes with private ski concierge service.",
+            "category": "Adventure",
+            "image": {
+              "url": "https://images.unsplash.com/photo-1551524164-6ca4ac833fb5?w=800&q=90",
+              "alt": "Ski slopes with dramatic Dolomites mountain peaks in golden morning light"
+            }
+          },
+          {
+            "id": "highlight-dining",
+            "title": "Michelin-Starred Cuisine",
+            "description": "Savor exceptional culinary artistry featuring locally-sourced Alpine ingredients.",
+            "category": "Culinary",
+            "image": {
+              "url": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=90",
+              "alt": "Elegant fine dining setup with mountain view backdrop and artisanal presentation"
+            }
+          },
+          {
+            "id": "highlight-sustainability",
+            "title": "Eco-Luxury Pioneer",
+            "description": "Leading sustainable hospitality with carbon-neutral operations and local community partnerships.",
+            "category": "Sustainability",
+            "image": {
+              "url": "https://images.unsplash.com/photo-1518684079-3c830dcef090?w=800&q=90",
+              "alt": "Modern eco-friendly architecture integrated harmoniously with alpine forest surroundings"
+            }
+          }
+        ]
+      },
+      "settings": {}
+    },
+    {
+      "id": "home-stats",
+      "type": "stats-band",
+      "data": {
+        "title": "Alpine Excellence by Numbers",
+        "stats": [
+          { "id": "stat-1", "number": "94", "suffix": "%", "label": "Guest Satisfaction" },
+          { "id": "stat-2", "number": "15", "label": "Luxury Suites" },
+          { "id": "stat-3", "number": "2", "label": "Michelin Stars" },
+          { "id": "stat-4", "number": "1", "label": "Carbon Neutral" }
+        ]
+      },
+      "settings": {}
+    },
+    {
+      "id": "home-testimonials",
+      "type": "testimonials",
+      "data": {
+        "label": "Guest Reviews",
+        "title": "What Our Guests Say",
+        "testimonials": [
+          {
+            "id": "testimonial-1",
+            "quote": "Lumina Alpine Retreat exceeded every expectation. The perfect blend of luxury, sustainability, and genuine Alpine hospitality. Our suite overlooked pristine peaks, and every meal was a culinary masterpiece.",
+            "author": "Charlotte Dubois",
+            "role": "Travel Editor",
+            "location": "Paris, France",
+            "rating": 5
+          },
+          {
+            "id": "testimonial-2",
+            "quote": "The spa treatments here are transformative. The Alpine Stone Ritual combined with the mountain air created the most relaxing experience of my life. I left feeling completely rejuvenated.",
+            "author": "Marcus Weber",
+            "role": "Executive",
+            "location": "Zurich, Switzerland",
+            "rating": 5
+          },
+          {
+            "id": "testimonial-3",
+            "quote": "As someone passionate about sustainable travel, I was impressed by their genuine commitment to environmental responsibility without compromising on luxury. The perfect eco-conscious getaway.",
+            "author": "Isabella Rodriguez",
+            "role": "Environmental Consultant",
+            "location": "Barcelona, Spain",
+            "rating": 5
+          }
+        ]
+      },
+      "settings": {}
+    },
+    {
+      "id": "home-newsletter",
+      "type": "newsletter-cta",
+      "data": {
+        "title": "Alpine Insider",
+        "description": "Subscribe to receive exclusive seasonal offers, insider updates, and first access to our curated Alpine experiences.",
+        "placeholder": "Enter your email address",
+        "cta": { "id": "newsletter-cta", "label": "Join the Community", "href": "#", "variant": "primary" }
+      },
+      "settings": {}
+    }
+  ]
+}
+

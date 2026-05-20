@@ -25,9 +25,20 @@
       "menu": {
         "$ref": "../config/menu.json#/main"
       },
-      "actions": {
-        "$ref": "../config/menu.json#/headerActions"
-      },
+      "actions": [
+        {
+          "id": "cta-login",
+          "label": "Guest Portal",
+          "href": "/#",
+          "variant": "ghost"
+        },
+        {
+          "id": "cta-book",
+          "label": "Book Now",
+          "href": "/accommodations",
+          "variant": "primary"
+        }
+      ],
       "logoHref": "/",
       "logoText": "Lumina Alpine Retreat",
       "announcement": "Winter Season 2024: Book Early & Save 20%",
